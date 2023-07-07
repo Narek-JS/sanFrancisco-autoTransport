@@ -1,0 +1,141 @@
+.stepsBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.id {
+    width: 80px;
+    min-width: 80px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #FFFFFF;
+    color: hsla(7, 78%, 53%, 1);
+}
+
+.activeStep .id {
+    background-color: hsla(7, 78%, 53%, 1);
+    color: #FFFFFF;
+}
+
+.text {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 5px;
+}
+
+.activeStep .text {
+    background-color: hsla(7, 78%, 53%, 1);
+    padding: 2px;
+    margin-left: 0;
+}
+
+.row {
+    height: 1px;
+    background: #FFFFFF;
+    position: relative;
+    flex: 1 1 auto;
+    margin-left: 5px;
+    min-width: 128px;
+    transform: translateY(1px);
+}
+
+.row::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: -7px;
+    top: 50%;
+    background-color: #FFFFFF;
+    transform: translateY(-50%) rotate(-90deg);
+    clip-path: polygon(50% 50%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.row::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background-color: #FFFFFF;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+@media screen and (max-width: 1260px) {
+    .step {
+        width: initial;
+    }
+
+    .row {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 1175px) {
+
+    .row {
+        min-width: 80px;
+    }
+}
+
+@media screen and (max-width: 1115px) {
+
+    .row {
+        min-width: 60px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .step {
+        width: 100%;
+    }
+
+    .row {
+        min-width: 30px;
+    }
+    .row::after {
+        display: none;
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    .step .id {
+        color: #FFFFFF;
+        background-color: hsla(220, 87%, 21%, 0.85);
+    }
+
+    .step .text {
+        color: hsla(220, 87%, 21%, 0.85);
+    }
+
+    .activeStep .id {
+        background-color: hsla(7, 78%, 53%, 1);    
+    }
+
+    .activeStep .text {
+        color: #FFFFFF;
+    }
+
+    .row,
+    .row::before,
+    .row::after {
+        background-color: hsla(220, 87%, 21%, 0.85);
+    }
+}

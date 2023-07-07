@@ -1,0 +1,101 @@
+.textes {
+    flex: 50;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.explore {
+    margin: 20px auto;
+    max-width: 846px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.explore p {
+    font-weight: 700;
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+.explore .fz24 {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.explore p span {
+    color: hsla(7, 78%, 53%, 1);
+}
+
+.link {
+    color: hsla(7, 78%, 53%, 1);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.seccondLinkTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.seccondLinkTitle p {
+    max-width: 392px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 10px;
+    background: hsla(220, 87%, 21%, 0.6);
+    border-radius: 5px;
+}
+
+.seccondLinkTitle a {
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        gap: 30px;
+    }
+    .explore p {
+        font-size: 33px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .link { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+    .explore {
+        margin: 20px auto 0 auto;
+    }
+
+    .explore p {
+        font-size: 32px;
+        color: hsla(220, 87%, 21%, 0.85);
+        text-align: center;
+    }
+
+    .linkTitle,
+    .seccondLinkTitle { display: none; }
+
+    .content {
+        flex-direction: column;
+        gap: 0px;
+    }
+    
+    .textes {
+        margin-top: 20px;
+    }
+
+    .toContactUs { margin: 0 auto; }
+}

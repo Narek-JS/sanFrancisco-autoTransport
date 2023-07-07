@@ -1,0 +1,87 @@
+.quoteSection {
+    margin: 20px 0;
+}
+
+.quoteNode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.quoteNodeRevers {
+    flex-direction: row-reverse;
+}
+
+.paymentInformation {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+
+.paymentInformation div {
+    background-color: #F4F7FB;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.paymentInformation div p {
+    color: #072765;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.paymentInformation a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 10px;
+    color: #E53E29;
+}
+
+.paymentInformation a svg {
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.quoteNode p:has(span) {
+    padding-left: 15px;
+    position: relative;
+}
+
+.quoteNode p:has(span)::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #E53E29;
+    border-radius: 50px;
+    top: 10px;
+    left: 0;
+}
+
+.quoteNode p span {
+    margin-left: 0 !important;
+}
+
+
+.red {
+    color: #E53E29 !important;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .quoteNode {
+        flex-direction: column;
+    }
+
+    .paymentInformation {
+        display: none;
+    }
+}

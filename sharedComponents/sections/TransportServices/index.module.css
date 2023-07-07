@@ -1,0 +1,106 @@
+.servicesSection {
+    width: 100%;
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.gray {
+    background: #F4F7FB;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #001D4A;
+}
+
+.servicesContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.serviceBlock {
+    position: relative;
+
+    width: 306px;
+    height: 268px;
+
+    border-radius: 30px;
+    border: 2px dashed hsla(7, 78%, 53%, 1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.serviceBlockWrapperImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.serviceBlockBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 38, 100, 0.726);
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.serviceBlockContent {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+
+.serviceBlockTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.serviceBlockDescription {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 25.2px;
+    text-align: center;
+}
+
+.serviceBlockLink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    color: hsla(7, 78%, 53%, 1);
+}
+
+@media screen and (max-width: 991px) {
+    .servicesContent {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

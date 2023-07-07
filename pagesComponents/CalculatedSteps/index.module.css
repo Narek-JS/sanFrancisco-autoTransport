@@ -1,0 +1,90 @@
+.calculatedSteps {
+    height: 380px;
+}
+
+.step {
+    overflow-y: clip;
+    padding-bottom: 30px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.isActive {
+
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapperQuestionText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    background-color: #E53E29;
+}
+
+.questionText {
+    color: #072765;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 20px;
+}
+
+.answer {
+    transition: all .3s;
+    height: 0;
+    overflow-y: clip;
+    color: #072765;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.activeStep {
+    padding-bottom: 15px;
+}
+
+.activeStep .answer {
+    animation: openHeight .5s forwards;
+    margin: 10px 20px 0 20px;
+}
+
+.row {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(7, 39, 101, 0.20);
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .activeStep .answer {
+        animation: openHeightMobile .5s forwards;
+    }
+}
+
+@keyframes openHeightMobile {
+    0% {
+        height: 0;  
+    }
+    100% {
+        height: min-content;
+    }
+}
+
+@keyframes openHeight {
+    0% {
+        height: 0;  
+    }
+    100% {
+        height: 80px;
+    }
+}

@@ -1,0 +1,154 @@
+.transportSection {
+    padding: 20px 0;
+}
+
+.transportContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.transportArtNode {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
+
+.rowRevers {
+    flex-direction: row-reverse;
+}
+
+.latestArticlesTitle,
+.transportServicesTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0 30px 0;
+}
+
+.latestArticlesTitle *,
+.transportServicesTitle * {
+    color: hsla(216, 100%, 15%, 1);
+    font-size: 20px;
+}
+
+.transportServicesSeccondBlock,
+.transportServices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;   
+}
+
+.transportServicesSeccondBlock {
+    width: 100%;
+}
+
+.calculatedSection {
+    padding: 20px 0;
+}
+
+.calculatedSectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 40px;
+    color: hsla(216, 100%, 15%, 1);
+    font-size: 20px;
+}
+
+.calculatedSectionTitle span {
+    color: hsla(7, 78%, 53%, 1);
+    font-weight: 700;
+}
+
+.calculatedSectionContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.calculatedSectionSteps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.calculatedSectionStepsLink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: hsla(7, 78%, 53%, 1);
+}
+
+.latestArticlesSection {
+    padding: 20px 0;
+}
+
+.latestArticlesContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.latestArticleNode {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.latestArticleNode h3 {
+    font-size: 18px;
+    color: #E53E29;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+@media screen and (max-width: 1240px) {
+    .latestArticlesContent {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .transportServices {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .transportArtNode,
+    .transportServices {
+        flex-direction: column;
+    }
+
+    .calculatedSectionContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .calculatedSectionTitle {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .transportServicesSeccondBlock {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cards {
+        flex-direction: column;
+    }
+}

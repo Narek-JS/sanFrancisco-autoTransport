@@ -1,0 +1,69 @@
+
+.contentNode {
+    background-color: hsla(214, 47%, 97%, 1);
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+}
+
+.contentNode i {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.content * {
+    color: hsla(220, 87%, 21%, 1);
+    line-height: 24px;
+}
+
+.content h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.content h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.content a {
+    color: hsla(7, 78%, 53%, 1);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.content a *:first-child {
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+.content *:first-child {
+    margin-left: 25px;
+    color: hsla(7, 78%, 53%, 1);
+    margin-bottom: 15px;
+}
+
+.content .dott {
+    position: relative;
+    padding-left: 5px;
+}
+
+.content .dott::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: hsla(220, 87%, 21%, 1);
+    border-radius: 50%;
+    top: 50%;
+}

@@ -1,0 +1,47 @@
+
+.contentAboutSubscibe {
+    border-radius: 10px;
+    max-width: 418px;
+    padding: 30px 20px;
+    max-width: 418px;
+    min-width: 320px;
+    height: 290px;
+    overflow-y: auto;
+}
+
+.firstPolygon {
+    transform: translateX(110px);
+    display: inline-block;
+}
+
+.contentAboutSubscibe p {
+    font-weight: 700;
+    font-size: 34px;
+    color: hsla(216, 100%, 15%, 1);
+    display: flex;
+}
+
+.contentAboutSubscibe p .red {
+    color: #FF0000;
+}
+
+.contentAboutSubscibe p i {
+    transform: translateY(20px);
+}
+
+.wrapperLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    transform: translateY(10px);
+}
+
+.linkToYouTube {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 7px;
+    border: 4px solid #FF0000;
+    border-radius: 10px;
+}

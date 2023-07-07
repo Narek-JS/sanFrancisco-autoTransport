@@ -1,0 +1,188 @@
+.wrapperSearch {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.seaech {
+    background: hsla(7, 78%, 53%, 1);
+    width: 68px;
+    height: 38px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.input {
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input input {
+    height: 34.3px;
+    outline: 2px solid hsla(7, 78%, 53%, 1);
+    background-color: #FFFFFF;
+    padding: 0 10px;
+    border-radius: 5px 0 0 5px;
+} 
+
+.input input:focus {
+    outline: 2px solid hsla(7, 78%, 53%, 1);
+}
+
+.dropDown {
+    max-width: 290px;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: clip;
+    position: absolute;
+    top: 38px;
+    padding: 10px 5px;
+    background: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    z-index: 999;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropDown a {
+    transition: all .1s;
+    padding: 0px 15px;
+    font-weight: 700;
+    font-size: 14px; 
+    color: hsla(220, 87%, 21%, 0.85);
+}
+
+.dropDown a:hover {
+    background: rgba(0, 59, 86, 0.219);
+}
+
+.dropDown a span {
+    color: hsla(7, 78%, 53%, 1);
+}
+
+.dropDown::-webkit-scrollbar {
+    width: 5px;
+}
+  
+.dropDown::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+}
+  
+.dropDown::-webkit-scrollbar-thumb {
+    background: hsla(7, 78%, 53%, 1);
+    border-radius: 10px;
+}
+.close .dropDown {
+    opacity: 0;
+}
+
+.dropDownEmpty {
+    padding: 10px 20px;
+    width: 100%;
+    height: initial;
+}
+
+.dropDownClose {
+    height: 0;
+    opacity: 0;
+}
+
+.dropDownEmpty p {
+    font-weight: 700;
+    font-size: 14px; 
+    color: hsla(220, 87%, 21%, 0.85);
+}
+
+.close {
+    margin-right: -220px;
+    animation-name: toRight;
+    animation-duration: .3s;
+    animation-timing-function: initial;
+    transition: .3s;
+    opacity: 0;
+}
+
+.open {
+    animation-name: fromRight;
+    animation-duration: .3s;
+    animation-timing-function: initial;
+    transition: .3s;
+}
+
+@keyframes fromRight {
+    from {
+        margin-right: -220px;
+    }
+    to {
+        margin-right: 0px;
+    }
+}
+
+@keyframes toRight {
+    from {
+        margin-right: 0px;
+    }
+    to {
+        margin-right: -220px;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .dropDown {
+        padding: 10px 10px;
+    }
+    .wrapperSearch {
+        max-width: 180px;
+        margin-left: 10px;
+    }
+    .close {
+        margin-right: -200px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .seaech {
+        width: 55px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .seaech {
+        width: 72px;
+        height: 39px;
+    }
+    .input {
+        width: 100%;
+        max-width: initial;
+    }
+    .input input {
+        height: 35.3px;
+    }
+    .close {
+        margin-right: -50px;
+        max-width: initial;
+    }
+    .wrapperSearch {
+        width: 100%;
+        max-width: 100%;
+        margin-left: initial;
+    }
+    .dropDown {
+        max-width: initial;
+        width: 100%;
+        border-radius: 0 0 0 0px;
+    }
+    .dropDown a {
+        padding: 7px 0px;
+    }
+}

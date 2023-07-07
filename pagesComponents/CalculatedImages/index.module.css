@@ -1,0 +1,81 @@
+.calculatedImages {
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    height: min-content;
+}
+
+.calculatedCenterImage {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    background-color: #FFFFFF;
+
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 0px rgba(7, 39, 101, 0.10);
+}
+
+.calculatedCenterImage img {
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+}
+
+.calculatedCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.calculatedCard {
+    border-radius: 50px;
+    background: var(--back-font, #FDFDFF);
+    box-shadow: 5px 5px 5px 0px rgba(7, 39, 101, 0.10);
+    padding: 26px 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 225px;
+    height: 183px;
+}
+
+.calculatedCard img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.calculatedCard p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #072765;
+    text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+    .calculatedCard {
+        width: initial;
+        height: 215px;
+    }
+
+    .calculatedCards {
+        gap: 10px;
+    }
+}

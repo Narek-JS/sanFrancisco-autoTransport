@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, li, button, input {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --tooltip-margin: 15px;
+  --tooltip-arrow-size: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+section, nav, header, footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+}
+
+
+.carousel .control-dots {
+  z-index: 2;
+}
+
+.control-dots .dot {
+  width: 20px !important;
+  height: 20px !important;
+  border: 2px solid linear-gradient(180deg, #F83600 0%, #FE8C00 100%) !important;
+  background: #FFFFFF !important;
+  border-radius: 30% !important;
+  opacity: 1 !important;
+  position: relative;
+}
+
+.control-dots .dot::before {
+  content: "";
+  border: 2px solid transparent;
+  background: hsla(7, 78%, 53%, 1) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  position: absolute;
+  inset: 0;
+  border-radius: 30% !important;
+}
+
+.control-dots .selected {
+  border: 2px solid #FFFFFF !important;
+  background: hsla(7, 78%, 53%, 1) !important;
+}
+
+body:has(.sideBar), body:has(.fullScreen), body:has(.feedbackForm) {
+  overflow: hidden;
+}
+
+body:has(.feedbackForm) .socialLinks {
+    display: none;
+}
+
+.dott {
+  position: relative;
+  padding-left: 10px;
+}
+
+.dott::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: hsla(220, 87%, 21%, 1);
+  border-radius: 999px;
+  top: 35%;
+  left: -5px;
+}
+
+.player {
+  border-radius: 10px;
+}

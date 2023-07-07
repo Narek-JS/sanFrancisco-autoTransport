@@ -1,0 +1,22 @@
+.rounded-video {
+    max-width: 410px;
+    width: 410px;
+    max-height: 300px;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.rounded-video .player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    .rounded-video {
+        width: 100%;
+        max-height: 100%;
+    }
+}
