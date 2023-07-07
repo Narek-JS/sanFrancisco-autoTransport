@@ -26,17 +26,12 @@ interface IBlockNode {
     from?: "left" | "right" | "top" | "bottom";
 };
 
-const WhiteBlockNode: React.FC<IBlockNode> = ({ children, from }) => {
-
-    return (
-        <motion.div
-            className={classes.whiteBlockNode}
-            {...(from && { ...motionOption[from] })}
-        >
-            {children}
-        </motion.div>
-    );
-};
+const WhiteBlockNode: React.FC<IBlockNode> = ({ children, from }) => (
+    <motion.div
+        className={classes.whiteBlockNode}
+        {...(from && { ...motionOption[from] })}
+    > {children} </motion.div>
+);
 
 const Insurance: NextPage = () => {
     const titleRef = useScrollToView<HTMLHeadingElement>();

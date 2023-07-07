@@ -38,6 +38,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-youtube": "^10.1.0",
     "redux": "^4.2.1",
+    "sitemap": "^7.1.1",
     "typescript": "5.0.4",
     "yup": "^1.1.1"
   }
