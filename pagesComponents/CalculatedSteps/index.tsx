@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { calculatedSteps } from '@/TEST_DATA/calculated_data.json';
+import { calculated_data as calculatedSteps } from '@/TEST_DATA/calculated_data';
 import classes from './index.module.css';
 import classNames from 'classnames';
 import { ArrowDynamic } from '@/public/assets/svgs/ArrowDynamic';
@@ -12,7 +12,7 @@ interface IStep {
 
 const CalculatedSteps: React.FC = () => {
     const [ steps, setSteps ] = useState<Array<IStep>>(
-        calculatedSteps.map(_ => ({..._, isActive: false}))
+        calculatedSteps.calculatedSteps.map(_ => ({..._, isActive: false}))
     );
 
     const toogleStep = (index) => {

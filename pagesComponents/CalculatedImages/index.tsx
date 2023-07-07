@@ -1,9 +1,8 @@
-import { calculatedCards } from '@/TEST_DATA/calculated_data.json';
+import { calculated_data as calculatedCards } from '@/TEST_DATA/calculated_data';
 import { motion } from 'framer-motion';
 import { motionOption } from '@/constants/animationOptions';
 import Image from 'next/image';
 import classes from './index.module.css';
-
 interface ICard {
     imagePath: string;
     text: string;
@@ -45,7 +44,7 @@ const CalculatedImages: React.FC = () => {
                 />
             </motion.div>
             <div className={classes.calculatedCards}>
-                { calculatedCards.map(({ imagePath, text }, index) => (
+                { calculatedCards.calculatedCards.map(({ imagePath, text }, index) => (
                     <CalculatedCard
                         key={index}
                         imagePath={imagePath}

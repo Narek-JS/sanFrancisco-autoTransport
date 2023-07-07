@@ -11,7 +11,7 @@ import { motionOption } from "@/constants/animationOptions";
 import { FormAgent } from "@/pagesComponents/FormAgent";
 import { InsuranceFullCoverage } from "@/sharedComponents/sections/InsuranceFullCoverage";
 import { TransportServices } from "@/sharedComponents/sections/TransportServices";
-import servicesData from '@/TEST_DATA/transport_services_data.json';
+import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
 import Link from "next/link";
 import Head from "next/head";
 import classNames from "classnames";

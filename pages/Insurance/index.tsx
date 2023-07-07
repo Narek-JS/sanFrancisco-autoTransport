@@ -14,7 +14,7 @@ import { ImageRounded } from "@/sharedComponents/ImageRounded";
 import { TransportServices } from "@/sharedComponents/sections/TransportServices";
 import { motion } from 'framer-motion';
 import { motionOption } from "@/constants/animationOptions";
-import servicesData from '@/TEST_DATA/transport_services_data.json';
+import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
 import classNames from "classnames";
 import Image from "next/image";
 import Head from "next/head";

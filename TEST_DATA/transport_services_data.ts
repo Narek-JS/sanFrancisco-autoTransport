@@ -1,4 +1,4 @@
-[
+export const transport_services_data = [
     {
         "title": "Open Car Transport",
         "description": "The most popular method of auto transport is Open Car Moving.",

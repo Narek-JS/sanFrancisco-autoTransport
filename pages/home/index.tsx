@@ -18,8 +18,8 @@ import { HelpSection } from '@/sharedComponents/sections/HelpSection';
 import { motion } from 'framer-motion';
 import { motionOption } from '@/constants/animationOptions';
 import { NextPage } from 'next';
-import servicesData from '@/TEST_DATA/transport_services_data.json';
-import latestArticles from '@/TEST_DATA/latest_articles.json'
+import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
+import { latest_articles as latestArticles } from '@/TEST_DATA/latest_articles';
 import Head from 'next/head';
 import classNames from 'classnames';
 import Link from 'next/link';

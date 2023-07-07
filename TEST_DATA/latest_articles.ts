@@ -1,4 +1,4 @@
-{
+export const latest_articles = {
     "blogs": [
         {
             "imagePath": "/assets/images/blogImage1.png",

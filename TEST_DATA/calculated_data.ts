@@ -1,4 +1,4 @@
-{
+export const calculated_data = {
     "calculatedCards": [
         {
             "imagePath": "/assets/images/calculatedCardImage1.png",
