@@ -1,7 +1,6 @@
 import { FormikErrors } from '@/sharedComponents/FormikError';
 import { useFormik } from 'formik';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import * as yup from "yup";
 import classes from './index.module.css';
 
@@ -42,9 +41,9 @@ const Comment = () => {
     };
 
     return ( 
-        <motion.div
+        <motionCustom.div
             className={classes.postComment}
-            {...motionOption.right}
+            from='right'
         >
             <h2 className={classes.postCommentTitle}>Leave a Reply</h2>
             <form className={classes.form} onSubmit={formik.handleSubmit}>
@@ -112,7 +111,7 @@ const Comment = () => {
                     Post Comment
                 </button>
             </form>
-        </motion.div>
+        </motionCustom.div>
     );
 };
 

@@ -12,8 +12,7 @@ import { FaqIcon } from "@/public/assets/svgs/FaqIcon";
 import { WrapperContentNode } from "@/sharedComponents/WrapperContentNode";
 import { ImageRounded } from "@/sharedComponents/ImageRounded";
 import { TransportServices } from "@/sharedComponents/sections/TransportServices";
-import { motion } from 'framer-motion';
-import { motionOption } from "@/constants/animationOptions";
+import { motionCustom } from "@/MotionAnimationElements";
 import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
 import classNames from "classnames";
 import Image from "next/image";
@@ -27,10 +26,12 @@ interface IBlockNode {
 };
 
 const WhiteBlockNode: React.FC<IBlockNode> = ({ children, from }) => (
-    <motion.div
+    <motionCustom.div
         className={classes.whiteBlockNode}
-        {...(from && { ...motionOption[from] })}
-    > {children} </motion.div>
+        from={from}
+    >
+        {children}
+    </motionCustom.div>
 );
 
 const Insurance: NextPage = () => {

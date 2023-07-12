@@ -1,28 +1,31 @@
 import { ContentNodeIcon } from '@/public/assets/svgs/ContentNodeIcon';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import classes from './index.module.css';
 
 interface IProps {
     children: React.ReactNode;
     from?: 'right' | 'left' | 'bottom' | 'top';
+    maxWidth?: number;
 };
 
-const WrapperContentNode: React.FC<IProps> = ({ children, from }) => {
-
+const WrapperContentNode: React.FC<IProps> = ({
+    children,
+    maxWidth,
+    from,
+}) => {
     return (
-        <motion.div
+        <motionCustom.div
             className={classes.contentNode}
             exit="hide"
-            {...(from && motionOption[from])}
+            {...(maxWidth !== undefined && { style: { maxWidth: maxWidth + 'px' } })}
+            {...(from && { from })}
         >
-            <i>
-                <ContentNodeIcon />
-            </i>
-            <div className={classes.content}>
-                {children}
-            </div>
-        </motion.div>
+            <i> <ContentNodeIcon /> </i>
+            <div
+                className={classes.content}
+                children={children}
+            />
+        </motionCustom.div>
     );
 };
 

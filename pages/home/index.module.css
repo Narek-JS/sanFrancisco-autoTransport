@@ -76,13 +76,6 @@
     gap: 30px;
 }
 
-.calculatedSectionStepsLink {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: hsla(7, 78%, 53%, 1);
-}
-
 .latestArticlesSection {
     padding: 20px 0;
 }
@@ -137,8 +130,10 @@
     .calculatedSectionTitle {
         justify-content: center;
         margin-bottom: 15px;
+        padding-left: 0px;
+        display: block;
+        text-align: center;
     }
-
 }
 
 @media screen and (max-width: 768px) {

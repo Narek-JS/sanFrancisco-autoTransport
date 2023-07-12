@@ -138,4 +138,9 @@
     .row::after {
         background-color: hsla(220, 87%, 21%, 0.85);
     }
+
+    .id {
+        width: 48px;
+        min-width: 48px;
+    }
 }

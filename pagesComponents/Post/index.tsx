@@ -18,8 +18,7 @@ import { useGetLatestNewsQuery } from '@/store/latestNews';
 import { useGetLatestBlogsQuery } from '@/store/latestBlogs';
 import { ContentNodeIcon } from '@/public/assets/svgs/ContentNodeIcon';
 import { MightAlsoIcon } from '@/public/assets/svgs/MightAlsoIcon';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import {
     FacebookShareButton,
     TwitterShareButton,
@@ -61,18 +60,18 @@ const Post: React.FC<Iprops> = ({ data, category }) => {
                 <Container>
                     <div className={classes.postSection}>
                         <div className={classes.postContent}>
-                            <motion.h1
+                            <motionCustom.h1
                                 className={classes.title}
-                                {...motionOption.left}
+                                from='left'
                             >
                                 <Link href={menu?.contactInfo?.[LINKS_FROM_MENU_TITLES[category]].url || ''}>
                                     <ContentNodeIcon color='#E53E29'/>
                                     {menu?.contactInfo?.[LINKS_FROM_MENU_TITLES[category]].title}
                                 </Link>
-                            </motion.h1>
-                            <motion.div
+                            </motionCustom.h1>
+                            <motionCustom.div
                                 className={classes.wrapperImage}
-                                {...motionOption.left}
+                                from='left'
                             >
                                 <Image
                                     src={data.post.image}
@@ -119,13 +118,13 @@ const Post: React.FC<Iprops> = ({ data, category }) => {
                                         </PinterestShareButton>
                                     </div>
                                 </div>
-                            </motion.div>
-                            <motion.div
+                            </motionCustom.div>
+                            <motionCustom.div
                                 className={classes.postBody}
-                                {...motionOption.left}
+                                from='left'
                             >
                                 <p dangerouslySetInnerHTML={{ __html: data.post.body }}/>
-                            </motion.div>
+                            </motionCustom.div>
                         </div>
                         { (category === "blogs" ? dataLatestNews : dataLatestBlogs)?.data &&
                             <LatestPost
@@ -163,6 +162,7 @@ const Post: React.FC<Iprops> = ({ data, category }) => {
                                         link={{ url: news?.slug || '' }}
                                         key={index}
                                         from='left'
+                                        classN='post-card'
                                     />
                                 ))}
                             </div>

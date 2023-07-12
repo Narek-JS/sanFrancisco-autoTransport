@@ -15,8 +15,7 @@ import { CalculatedImages } from '@/pagesComponents/CalculatedImages';
 import { CalculatedSteps } from '@/pagesComponents/CalculatedSteps';
 import { PostCard } from '@/sharedComponents/PostCard';
 import { HelpSection } from '@/sharedComponents/sections/HelpSection';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import { NextPage } from 'next';
 import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
 import { latest_articles as latestArticles } from '@/TEST_DATA/latest_articles';
@@ -89,28 +88,24 @@ const Home: NextPage = () => {
 
       <section className={classes.calculatedSection}>
         <Container>
-          <motion.h3
+          <motionCustom.h3
+          
             className={classes.calculatedSectionTitle}
-            {...motionOption.left}
+            from='left'
           >
             How we <span>Calculated</span> your transport <span>Fee</span> 
-          </motion.h3>
+          </motionCustom.h3>
 
-          <motion.div
+          <motionCustom.div
             className={classes.calculatedSectionContent}
-            {...motionOption.right}
+            from='right'
           >
             <CalculatedImages />
 
             <div className={classes.calculatedSectionSteps}>
               <CalculatedSteps />
-
-              <Link href='/' className={classes.calculatedSectionStepsLink}>
-                <RowForMore />
-                Read More
-              </Link>
             </div>
-          </motion.div>
+          </motionCustom.div>
         </Container>
       </section>
 
@@ -123,7 +118,7 @@ const Home: NextPage = () => {
 
           <div className={classes.latestArticlesContent}>
             <div className={classes.latestArticleNode}>
-              <motion.h3 {...motionOption.left}>Latest Blogs</motion.h3>
+              <motionCustom.h3 from='left'>Latest Blogs</motionCustom.h3>
 
               <div className={classes.cards}>
                 { latestArticles.blogs.map((blog, index) => (
@@ -139,7 +134,7 @@ const Home: NextPage = () => {
             </div>
 
             <div className={classes.latestArticleNode}>
-              <motion.h3 {...motionOption.right}>Latest News</motion.h3>
+              <motionCustom.h3 from='right'>Latest News</motionCustom.h3>
 
               <div className={classes.cards}>
                 { latestArticles.news.map((new_, index) => (

@@ -98,7 +98,7 @@
         gap: 40px;
     }
     .firstLine {
-        justify-content: flex-start;
+        justify-content: center;
         gap: 50px;
     }
 }

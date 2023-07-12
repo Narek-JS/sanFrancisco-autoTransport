@@ -1,7 +1,6 @@
 import { YouTubeIcon } from '@/public/assets/svgs/YouTubeIcon';
 import { Polygon } from '@/public/assets/svgs/Polygon';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import Link from 'next/link';
 import classes from './index.module.css';
 
@@ -17,9 +16,9 @@ const SubscibeYoutube: React.FC<IProps> = ({
     from
 }) => {
     return (
-        <motion.div
+        <motionCustom.div
             className={classes.contentAboutSubscibe}
-            {...(from && motionOption[from])}
+            {...(from && { from })}
         >
             <i className={classes.firstPolygon}>
                 <Polygon />
@@ -46,7 +45,7 @@ const SubscibeYoutube: React.FC<IProps> = ({
                 <span>SUBSCRIBE</span>
             </Link>
             </div>
-        </motion.div>
+        </motionCustom.div>
     );
 };
 

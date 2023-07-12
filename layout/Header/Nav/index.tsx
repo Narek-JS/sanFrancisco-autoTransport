@@ -13,6 +13,7 @@ import useWindowSize from '@/hooks/useWindowSize';
 import Link from 'next/link';
 import classNames from 'classnames';
 import classes from './index.module.css';
+import { EarringIconMobile } from '@/public/assets/svgs/EarringIconMobile';
 
 const Nav: React.FC = () => {
     const { pathname, query } = useRouter();
@@ -85,9 +86,15 @@ const Nav: React.FC = () => {
                     }
                 </div>
                 
-                <div className={classes.contentMobile} onClick={toogleQoutForm}>
-                    <ArrowIcon rotate={isOpenQuoteFormMobile ? 0 : 180}/>
-                    Get Quote Open
+                <div className={classes.contentMobile}>
+                    <Link href={`tel:${data?.topHeaderLeftItem?.title === 'Mail' ? data?.topHeaderRightItem?.url : data?.topHeaderLeftItem?.url}`}>
+                        <EarringIconMobile />
+                        call Now
+                    </Link>
+                    <div onClick={toogleQoutForm} className={classes.getQuote}>
+                        <ArrowIcon rotate={isOpenQuoteFormMobile ? 0 : 180}/>
+                        Get Quote Open
+                    </div>
                 </div>
             </Container>
         </nav>

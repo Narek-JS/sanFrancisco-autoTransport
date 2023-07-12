@@ -29,11 +29,11 @@ const useWindowSize = (): WindowSize => {
 
     const debouncedHandleResize = debounce(handleResize, 250);
 
-    window.addEventListener('resize', debouncedHandleResize);
+    window.addEventListener('resize', handleResize);
     handleResize();
 
     return () => {
-      window.removeEventListener('resize', debouncedHandleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 

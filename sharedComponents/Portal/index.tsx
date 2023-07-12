@@ -20,14 +20,21 @@ const Portal: React.FC<Props> = ({ children, onClose }) => {
     };
   }, []);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as HTMLElement;
-    const portal = document.querySelector(`.${styles.portal}`) as HTMLElement;
-    const dropdownMenu = document.querySelector(`.dropdownMenu`) as HTMLElement;
-    if (portal && !portal.contains(target) && portal.contains(dropdownMenu)) {
+const handleClickOutside = (event: MouseEvent) => {
+  const target = event.target as HTMLElement;
+  const portal = document.querySelector(`.${styles.portal}`) as HTMLElement;
+  const dropdownMenu = document.querySelector(`.dropdownMenu`) as HTMLElement;
+
+  if (portal && !portal.contains(target)) {
+    if(dropdownMenu === null){ 
       onClose();
+    } else {
+      if(!dropdownMenu.contains(target)) {
+        onClose();
+      }
     }
-  };    
+  }
+};
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
@@ -35,7 +42,7 @@ const Portal: React.FC<Props> = ({ children, onClose }) => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [portalRoot, onClose]);
+  }, [onClose]);
 
   return portalRoot ? (
     <div className={styles.overlay}>

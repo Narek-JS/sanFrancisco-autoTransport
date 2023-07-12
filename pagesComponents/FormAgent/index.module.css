@@ -218,6 +218,12 @@
     color: #F86565;
 }
 
+@media screen and (max-width: 1200px) {
+    .inputGroup {
+        min-width: initial;
+    }
+}
+
 @media screen and (max-width: 991px) {
     .content {
         flex-direction: column;

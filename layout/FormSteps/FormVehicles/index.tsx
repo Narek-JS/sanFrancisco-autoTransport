@@ -11,8 +11,7 @@ import {
     SetStepFunction,
     TypeOperableMethod,
     TypeShippingMethod,
-    UpdateGeneralFormData,
-    VahicleNode
+    UpdateGeneralFormData
 } from '@/model/form';
 import useWindowSize from '@/hooks/useWindowSize';
 import classNames from 'classnames';
@@ -52,7 +51,7 @@ const FormVehicles: React.FC<IProps> = ({
 
     const addVehicleList = () => {
         formik.setValues(prev => {
-            prev.vehicle.push(new VahicleNode());
+            prev.vehicle.push({ year: '', make: '', model: '' });
             return {...prev};
         });
     };

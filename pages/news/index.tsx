@@ -6,10 +6,9 @@ import { PostCard } from '@/sharedComponents/PostCard';
 import { Redirect } from '@/sharedComponents/Redirect';
 import { useGetNewsQuery } from '@/store/news';
 import { useHydration } from '@/hooks/useHydration';
-import { motion } from 'framer-motion';
+import { motionCustom } from "@/MotionAnimationElements";
 import { ContentNodeIcon } from '@/public/assets/svgs/ContentNodeIcon';
 import { useRouter } from 'next/router';
-import { motionOption } from '@/constants/animationOptions';
 import classNames from 'classnames';
 import classes from './index.module.css';
 
@@ -48,13 +47,13 @@ const News = () => {
     return (
         <section className={classes.newsSection}>
             <Container>
-                <motion.h1
+                <motionCustom.h1
                     className={classes.title}
-                    {...motionOption.left}
+                    from='left'
                 >
                     <ContentNodeIcon color='rgb(229, 62, 41)' />
                     News
-                </motion.h1>
+                </motionCustom.h1>
                 <div className={classes.wrapperNews}>
                     { news?.data?.posts.map((new_, index) => (
                         <PostCard
@@ -66,7 +65,6 @@ const News = () => {
                             imagePath={new_?.image || ''}
                             link={{ url: new_?.slug || '', text: 'Continue Reading' }}
                             key={index}
-                            from='skew'
                         />
                     ))}
                 </div>

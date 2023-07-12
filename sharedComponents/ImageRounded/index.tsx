@@ -1,7 +1,6 @@
+import { motionCustom } from "@/MotionAnimationElements";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import classes from './index.module.css';
-import { motionOption } from '@/constants/animationOptions';
 
 interface IProps {
     src: string;
@@ -18,8 +17,8 @@ const ImageRounded: React.FC<IProps> = ({
     height = 300,
     from
 }) => (
-    <motion.div
-        {...(from && motionOption[from])}
+    <motionCustom.div
+        from={from}
         className={classes.image}
         style={{ maxWidth: `${width}px`, maxHeight: `${height}px` }}
     >
@@ -31,7 +30,7 @@ const ImageRounded: React.FC<IProps> = ({
             width={width}
             height={height}
         />
-    </motion.div>
+    </motionCustom.div>
 
 );
 

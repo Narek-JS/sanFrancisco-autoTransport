@@ -8,7 +8,7 @@ export const ArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> & {
         transform: `rotate(${rotate}deg)`,
         transition: "all .3s"
       }}
-      width="50"
+      width="30"
       height="50"
       viewBox="0 0 50 50"
       fill="none"

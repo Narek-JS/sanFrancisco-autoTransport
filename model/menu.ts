@@ -61,7 +61,7 @@ export class MenuAdapter {
             allItems: items.concat(topHeaderCenterItems),
             topHeaderCenterItems,
             topHeaderLeftItem: topHeaderItems.find(item => item.title === 'left')?.children?.[0] || null, 
-            topHeaderRightItem: topHeaderItems.find(item => item.title === 'Right')?.children?.[0] || null
+            topHeaderRightItem: topHeaderItems.find(item => item.title === 'Right')?.children?.[0] || null,
         };
     }
 }

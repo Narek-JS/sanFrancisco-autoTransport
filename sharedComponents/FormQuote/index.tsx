@@ -1,36 +1,35 @@
 import { useFormik } from 'formik';
-import {
-    IQuoteFormData,
-    TypeOperableMethod,
-    TypeShippingMethod,
-    VahicleNode,
-    initialValuesQuoteForm
-} from '@/model/form';
+import { TypeOperableMethod, TypeShippingMethod } from '@/model/form';
 import { LabelUI } from '../LabelUI';
 import { AddVehiclesIcon } from '@/public/assets/svgs/AddVehiclesIcon';
 import { RemoveVehiclesIcon } from '@/public/assets/svgs/RemoveVehiclesIcon';
 import { DropdownSelectUI } from '../DropdownSelectUI';
 import { validationSchemaQuoteForm } from '@/constants/validationSchema';
 import { useRouter } from 'next/router';
-import { useAppDispatch } from '@/store/hooks';
-import { closeQuoteFormDesktop } from '@/store/quoteForm';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { closeQuoteFormDesktop, selectQuoteFormValues, updateQuoteFormValues } from '@/store/quoteForm';
 import { FormikErrors } from '../FormikError';
+import { useEffect } from 'react';
 import classes from './index.module.css';
 import classNames from 'classnames';
 
 const FormQuote = () => {
     const route = useRouter();
-
     const dispatch = useAppDispatch();
+    const quoteFormValues = useAppSelector(selectQuoteFormValues);
 
-    const formik = useFormik<IQuoteFormData>({
-        initialValues: initialValuesQuoteForm,
+    const formik = useFormik({
+        initialValues: quoteFormValues,
         onSubmit: (values) => {
             route.push('/thank-you');
             dispatch(closeQuoteFormDesktop())
         },
         validationSchema: validationSchemaQuoteForm,
     });
+
+    useEffect(() => {
+        dispatch(updateQuoteFormValues(formik.values));
+    }, [formik.values]);
 
     const handleSelectTime = (value: string) => {
         formik.setFieldValue("time", value);
@@ -42,8 +41,13 @@ const FormQuote = () => {
 
     const addVehicleList = () => {
         formik.setValues(prev => {
-            prev.vehicle.push(new VahicleNode());
-            return {...prev};
+            return {
+                ...prev,
+                vehicle: [
+                    ...prev.vehicle,
+                    { year: '', make: '', model: '' }
+                ]
+            };
         });
     };
 
@@ -51,8 +55,11 @@ const FormQuote = () => {
         if(formik.values.vehicle.length === 1) return;
 
         formik.setValues(prev => {
-            prev.vehicle.pop();
-            return { ...prev };
+            const newVehicle = prev.vehicle.filter((_, index) => index !== prev.vehicle.length - 1);
+            return {
+                ...prev,
+                vehicle: newVehicle
+            };
         });
     };
 
@@ -100,7 +107,6 @@ const FormQuote = () => {
                 <LabelUI color={leableColor} text='Vehicle' toolti={true} icon={true}/>
                 { formik.values.vehicle.map((vehicle, index) => {
                     const errors = formik.errors as any;
-                    
                     return (
                         <div key={index} className={classes.vehicleList}>
                             <div className={classes.inputWrapper}>

@@ -31,6 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         />
+        <meta
+          name="view-transition"
+          content="same-origin"
+        />
       </Head>
       <div className={ubuntuFont.className}>
         <Component {...pageProps} />

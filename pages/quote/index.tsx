@@ -6,8 +6,7 @@ import { WrapperContentNode } from "@/sharedComponents/WrapperContentNode";
 import { ImageRounded } from "@/sharedComponents/ImageRounded";
 import { CarefulIcon } from "@/public/assets/svgs/CarefulIcon";
 import { RowForMore } from "@/public/assets/svgs/RowForMore";
-import { motion } from 'framer-motion';
-import { motionOption } from "@/constants/animationOptions";
+import { motionCustom } from "@/MotionAnimationElements";
 import { FormAgent } from "@/pagesComponents/FormAgent";
 import { InsuranceFullCoverage } from "@/sharedComponents/sections/InsuranceFullCoverage";
 import { TransportServices } from "@/sharedComponents/sections/TransportServices";
@@ -16,7 +15,6 @@ import Link from "next/link";
 import Head from "next/head";
 import classNames from "classnames";
 import classes from './index.module.css'
-
 
 const Quote: NextPage = () => {
     return (
@@ -80,16 +78,16 @@ const Quote: NextPage = () => {
                         />
                     </div>
                     <div className={classes.paymentInformation}>
-                        <motion.div {...motionOption.left}>
+                        <motionCustom.div from="left">
                             <CarefulIcon />
                             <p>It is important to pay attention that San Francisco Car Transport doesn’t collect any kind of personal or payment information.</p>
-                        </motion.div>
-                        <motion.div {...motionOption.right}>
+                        </motionCustom.div>
+                        <motionCustom.div from="right">
                             <Link href='/'>
                                 <RowForMore color='#E53E29'/>
                                 Read More
                             </Link>
-                        </motion.div>
+                        </motionCustom.div>
                     </div>
                     <div className={classes.quoteNode}>
                         <WrapperContentNode from="right">

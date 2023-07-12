@@ -44,6 +44,15 @@ export const metaTags = {
             content="San Francisco Website Insurance"
         />
     ],
+    boatMoving: [
+        <title key={1}>Boat Moving | San Francisco</title>,
+        <meta key={2}
+            property="og:title"
+            data-hid="og:title"
+            data-n-head="ssr"
+            content="San Francisco Website Boat Moving"
+        />
+    ],
     notFound: [
         <title key={1}>NotFound | San Francisco</title>,
         <meta key={2}

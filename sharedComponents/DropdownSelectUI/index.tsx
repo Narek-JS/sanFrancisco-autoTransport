@@ -88,7 +88,7 @@ const DropdownSelectUI: React.FC<IProps> = ({
         </span>
       </div>
       {Boolean(isOpen && paintedItems.length) && (
-        <ul className={classes.dropdownMenu}>
+        <ul className={classNames(classes.dropdownMenu, 'dropdownMenu')}>
           {paintedItems.map((text, index) => (
             <li
               key={index}

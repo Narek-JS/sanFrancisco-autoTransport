@@ -2,8 +2,7 @@ import { Container } from '@/sharedComponents/Container';
 import { StarIcon } from '@/public/assets/svgs/StarIcon';
 import { useRouter } from 'next/router';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import useWindowSize from '@/hooks/useWindowSize';
 import Link from 'next/link';
 import classNames from 'classnames';
@@ -44,15 +43,15 @@ const ReviewSection = () => {
         })}>
             <Container>
                 <div className={classes.reviewContent}>
-                    <motion.div
-                        {...motionOption.left}
+                    <motionCustom.div
+                        from='left'
                         className={classes.descriptionWrapper}
                     >
                         <h3 className={classes.titleOfDescription}><span>San Jose</span> Car Transport Review</h3>
                         <p className={classes.description}>Lorem ipsum dolor sit amet consectetur. Cursus tortor amet porta condimentum auctor curabitur et. Ipsum hac vitae urna egestas vitae eget.  Cursus tortor amet porta condimentum auctor curabitur et. Ipsum hac vitae urna egestas vitae eget.Cursus tortor amet porta condimentum auctor curabitur et</p>
-                    </motion.div>
+                    </motionCustom.div>
                     <div className={classes.reviewContentSecondeBlock}>
-                        <motion.div
+                        <motionCustom.div
                             className={classes.estimate}
                             animate={{ transform: "translate(0, -100px)", opacity: 0 }}
                             whileInView={{ transform: "translate(0, 0px)", opacity: 1 }}
@@ -67,9 +66,9 @@ const ReviewSection = () => {
                                 ))}
                             </p>
                             <p className={classes.reviewQuantity}>199 Review</p>
-                        </motion.div>
+                        </motionCustom.div>
                         { Boolean(Number(width) > 1024) && (
-                            <motion.div
+                            <motionCustom.div
                                 className={classes.presentation}
                                 animate={{ transform: "translate(0, -100px)", opacity: 0 }}
                                 whileInView={{ transform: "translate(0, 0px)", opacity: 1 }}
@@ -88,9 +87,9 @@ const ReviewSection = () => {
                                         <span className={classes.percent}>{percent}</span>
                                     </div>
                                 ))}
-                            </motion.div>
+                            </motionCustom.div>
                         )}
-                        <motion.div
+                        <motionCustom.div
                             animate={{ transform: "translateX(100px)", opacity: 0 }}
                             whileInView={{transform: "translateX(0px)", opacity: 1 }}
                             className={classes.buttons}
@@ -105,7 +104,7 @@ const ReviewSection = () => {
                                 <RowForMore color='#FFFFFF' />
                                 Give us your feedback
                             </Link>
-                        </motion.div>
+                        </motionCustom.div>
                     </div>
                 </div>
             </Container>

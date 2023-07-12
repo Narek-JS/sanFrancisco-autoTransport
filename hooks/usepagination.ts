@@ -11,17 +11,24 @@ interface PaginationProps {
 function usePagination(totalPages: number, initialCurrentPage: number): PaginationProps {
   const [currentPage, setCurrentPage] = useState<number>(initialCurrentPage);
 
+  function scrollToTop() {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  };
+
   function goToPage(pageNumber: number) {
     setCurrentPage(pageNumber);
-  }
+    scrollToTop();
+  };
 
   function nextPage() {
     setCurrentPage((currentPage) => Math.min(currentPage + 1, totalPages));
-  }
+    scrollToTop();
+  };
 
   function prevPage() {
     setCurrentPage((currentPage) => Math.max(currentPage - 1, 1));
-  }
+    scrollToTop();
+  };
 
   function getVisiblePages(): number[] {
     const visiblePages: Array<number> = [];

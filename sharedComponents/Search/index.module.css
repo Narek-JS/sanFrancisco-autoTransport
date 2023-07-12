@@ -80,6 +80,7 @@
     background: hsla(7, 78%, 53%, 1);
     border-radius: 10px;
 }
+
 .close .dropDown {
     opacity: 0;
 }

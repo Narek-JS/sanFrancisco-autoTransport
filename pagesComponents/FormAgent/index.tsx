@@ -1,6 +1,4 @@
 import { Container } from '@/sharedComponents/Container';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
 import { FormikValues, useFormik } from 'formik';
 import { useState } from 'react';
 import { FormikErrors } from '@/sharedComponents/FormikError';
@@ -84,16 +82,12 @@ const FormAgent: React.FC = () => {
             <Container>
                 <div className={classes.content}>
                     <div className={classes.blockNode}>
-                        <motion.p
-                            className={classes.description}
-                            {...motionOption.left}
-                        >
+                        <p className={classes.description}>
                             if you have any <span>question</span> please leave a message and we'll get back to you !
-                        </motion.p>
+                        </p>
 
-                        <motion.form
+                        <form
                             className={classes.form}
-                            {...motionOption.left}
                             onSubmit={formik.handleSubmit}
                         >
                             <h2 className={classes.formTitle}>Get a <span>FREE</span> consultation</h2>
@@ -177,11 +171,10 @@ const FormAgent: React.FC = () => {
                                     </button>
                                 </div>
                             </div>
-                        </motion.form>
+                        </form>
                     </div>
-                    <motion.div
+                    <div
                         className={classes.blockNode}
-                        {...motionOption.right}
                     >
                         <h2 className={classes.imageDescription}>
                             <span>Live </span>
@@ -202,7 +195,7 @@ const FormAgent: React.FC = () => {
                             Email: 
                             <span> info@sanfranciscocartransport.com</span>
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
             </Container>
         </section>

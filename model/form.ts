@@ -37,7 +37,7 @@ export interface IVehicleFormData {
 };
 
 export const initialValuesVehicleForm: IVehicleFormData = {
-    vehicle: [ new VahicleNode() ],
+    vehicle: [ { year: '', make: '', model: '' } ],
     time: '',
     shippingMethod: '',
     isOperable: ''

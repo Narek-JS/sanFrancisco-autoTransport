@@ -1,10 +1,10 @@
 import { Container } from '@/sharedComponents/Container';
 import { ImageRounded } from '@/sharedComponents/ImageRounded';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
-import { motion } from 'framer-motion';
+import { SectionTitleIcon } from '@/public/assets/svgs/SectionTitleIcon';
+import { motionCustom } from '@/MotionAnimationElements';
 import Link from 'next/link';
 import classes from './index.module.css';
-import { SectionTitleIcon } from '@/public/assets/svgs/SectionTitleIcon';
 import classNames from 'classnames';
 
 interface ITransportServiceMock {
@@ -29,9 +29,10 @@ const Service: React.FC<ITransportServiceMock> = ({
     skew,
 }) => {
     return (
-        <motion.div
+        <motionCustom.div
             className={classes.serviceBlock}
             {...(skew && { 
+                initial: { transform: "skew(0deg) scale(1)" },
                 animate: { transform: "skew(90deg) scale(0)" },
                 whileInView: { transform: "skew(0deg) scale(1)" } 
             })}
@@ -53,7 +54,7 @@ const Service: React.FC<ITransportServiceMock> = ({
                     <RowForMore />
                 </Link>
             </div>
-        </motion.div>
+        </motionCustom.div>
     );
 };
 

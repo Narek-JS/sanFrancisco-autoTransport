@@ -1,8 +1,6 @@
 import YouTube from 'react-youtube';
-import { motion } from 'framer-motion';
-
+import { motionCustom } from "@/MotionAnimationElements";
 import classes from './index.module.css';
-import { motionOption } from '@/constants/animationOptions';
 
 interface IProps {
     id: string;
@@ -17,9 +15,9 @@ export const Video: React.FC<IProps> = ({
 }) => {
  
     return (
-        <motion.div
+        <motionCustom.div
             className={classes['rounded-video']}
-            {...(from && motionOption[from])}
+            {...(from && { from })}
         >
             <YouTube
                 videoId={id}
@@ -32,6 +30,6 @@ export const Video: React.FC<IProps> = ({
                 }}
                 className='player'
             />
-        </motion.div>
+        </motionCustom.div>
     );
 };

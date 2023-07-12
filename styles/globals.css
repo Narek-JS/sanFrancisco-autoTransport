@@ -113,3 +113,9 @@ body:has(.feedbackForm) .socialLinks {
 .player {
   border-radius: 10px;
 }
+
+@media screen and (max-width: 920px) {
+  .post-card:last-child {
+      display: none;
+  }
+}

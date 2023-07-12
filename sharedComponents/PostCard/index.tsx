@@ -1,8 +1,7 @@
 import { CalendarIcon } from '@/public/assets/svgs/CalendarIcon';
 import { formatDate } from '@/helper/time';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
-import { motion } from 'framer-motion';
-import { motionOption } from '@/constants/animationOptions';
+import { motionCustom } from "@/MotionAnimationElements";
 import { Conditional } from '../Conditional';
 import classNames from 'classnames';
 import Image from 'next/image';
@@ -22,6 +21,7 @@ interface IProps {
     description: string;
     link: { text?: string; url: string };
     from?: AnimationType;
+    classN?: string;
 };
 
 const PostCard: React.FC<IProps> = ({
@@ -32,16 +32,16 @@ const PostCard: React.FC<IProps> = ({
     description,
     link,
     title,
-    from
+    from,
+    classN = ''
 }) => {
-
     return (
-        <motion.div
-            className={classNames(classes.card, {
+        <motionCustom.div
+            className={classNames(classes.card, classN, {
                 [classes.shadowCard]: type === 'shadow',
                 [classes.squareCard]: type === 'square'
             })}
-            {...(from && motionOption[from])}
+            {...(from && { from })}
         >
             <Image
                 alt='Article Image'
@@ -81,7 +81,7 @@ const PostCard: React.FC<IProps> = ({
                     </Conditional>
                 </div>
             </div>
-        </motion.div>
+        </motionCustom.div>
     );
 };
 

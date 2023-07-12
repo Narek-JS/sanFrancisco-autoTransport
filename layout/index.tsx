@@ -9,6 +9,7 @@ import { Banner } from './Banner';
 import { SideBar } from './SideBar';
 import { SocialLinks } from './SocialLinks';
 import { Footer } from './Footer';
+import { Conditional } from '@/sharedComponents/Conditional';
 import Head from 'next/head';
 
 interface IProps {
@@ -18,7 +19,7 @@ interface IProps {
 
 const BannerStatus: React.FC<{ isBanner: boolean }> = ({ isBanner }) => {
     const dispatch = useAppDispatch();
-    
+
     useEffect(() => {
         dispatch(toogleIsBanner(isBanner));
     }, []);
@@ -28,7 +29,7 @@ const BannerStatus: React.FC<{ isBanner: boolean }> = ({ isBanner }) => {
 
 const Layout: React.FC<IProps> = ({ children, pageTitle = 'San Francisco' }) => {
     const { pathname, query } = useRouter();
-    const isBanner =  ['/blogs', '/news', '/404', '/customer-reviews'].includes(pathname) || query.slug; 
+    const isBanner =  ['/blogs', '/news', '/404', '/customer-reviews'].includes(pathname) || query.slug;
 
     return (
         <Fragment>
@@ -38,7 +39,9 @@ const Layout: React.FC<IProps> = ({ children, pageTitle = 'San Francisco' }) => 
             <ReduxProvider store={store}>
                 <BannerStatus isBanner={Boolean(isBanner)}/>
                 <Header />
-                {!isBanner && <Banner />}
+                <Conditional condition={!isBanner}>
+                    <Banner />
+                </Conditional>
                 <SideBar />
                 <SocialLinks />
                 <main>

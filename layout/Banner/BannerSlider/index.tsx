@@ -2,23 +2,24 @@ import { Carousel } from 'react-responsive-carousel';
 import { inRange } from 'lodash';
 import { useAppDispatch } from '@/store/hooks';
 import { BannreIndexType, changeBannerIndex } from '@/store/banner';
+import { useHydration } from '@/hooks/useHydration';
 import Image from 'next/image';
 import classes from './index.module.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-interface IProps {
-  bannerContentElm: HTMLDivElement | null; 
-}
-
-const BannerSlider: React.FC<IProps> = ({ bannerContentElm }) => {
+const BannerSlider: React.FC = () => {
   const dispatch = useAppDispatch();
-  const style = { height: bannerContentElm?.offsetHeight === undefined ? '100vh' : (bannerContentElm?.offsetHeight + 185) + 'px' };
-
+  const hydration = useHydration();
+  
   const handleSlideChange = (index: number) => {
     if(inRange(index, 0, 4)) {
-      dispatch(changeBannerIndex(String(index) as BannreIndexType))
+      dispatch(changeBannerIndex(String(index) as BannreIndexType));
     };
   };
+  
+  const bannerContentElm: HTMLElement | null = hydration ? document.querySelector('.bannerContentElm') : null; 
+
+  const style = { height: bannerContentElm?.offsetHeight === undefined ? '100vh' : (bannerContentElm?.offsetHeight + 185) + 'px' };
 
   return (
     <Carousel
@@ -27,7 +28,7 @@ const BannerSlider: React.FC<IProps> = ({ bannerContentElm }) => {
       interval={10000}
       showStatus={false}
       showThumbs={false}
-      dynamicHeight={true}
+      dynamicHeight={false}
       onChange={handleSlideChange}
     >
       <div className={classes.imageWrapper} style={style}>

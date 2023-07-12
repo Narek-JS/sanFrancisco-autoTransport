@@ -52,6 +52,7 @@
     margin-left: 25px;
     color: hsla(7, 78%, 53%, 1);
     margin-bottom: 15px;
+    font-size: 20px;
 }
 
 .content .dott {
@@ -66,4 +67,14 @@
     background: hsla(220, 87%, 21%, 1);
     border-radius: 50%;
     top: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .contentNode {
+        max-width: 100% !important;
+    }
+}
+
+.asd {
+    
 }

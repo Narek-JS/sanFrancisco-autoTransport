@@ -87,7 +87,7 @@ const Header: React.FC = () => {
                     <div className={classes.contentMobile}>
                         <Link href='/'>
                             <Image
-                                src={"/assets/images/logo.png"} // data?.logo || "/assets/images/logo.png"
+                                src={"/assets/images/logo.png"}
                                 alt="logo"
                                 className={classes.logo}
                                 width={190}
