@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import classes from './index.module.css';
 import classNames from 'classnames';
 
-const FormQuote: React.FC<{ isBorder: boolean }> = ({ isBorder }) => {
+const FormQuote: React.FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
     const route = useRouter();
     const dispatch = useAppDispatch();
     const quoteFormValues = useAppSelector(selectQuoteFormValues);

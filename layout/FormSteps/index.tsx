@@ -56,7 +56,7 @@ const FormSteps: React.FC = () => {
                 <div className={classes.form}>
                     <Conditional
                         condition={!isQuote}
-                        fallback={() => <FormQuote />}
+                        fallback={() => <FormQuote  />}
                     ><>
                         { step === 1 && (
                             <FormFromTo
