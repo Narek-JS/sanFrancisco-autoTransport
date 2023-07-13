@@ -4,13 +4,13 @@ import { Fragment, useState } from "react";
 import { motion } from "framer-motion";
 import { motionOption } from "@/constants/animationOptions";
 import { SectionTitleIcon } from "@/public/assets/svgs/SectionTitleIcon";
-import { Container } from "@/sharedComponents/Container";
+import { Container } from "@/components/Container";
 import { ArrowOpenIcon } from "@/public/assets/svgs/ArrowOpenIcon";
-import { Conditional } from "@/sharedComponents/Conditional";
+import { Conditional } from "@/components/Conditional";
+import { useScrollToView } from "@/hooks/useScrollToView";
 import Head from "next/head";
 import classes from './index.module.css';
 import classNames from "classnames";
-import { useScrollToView } from "@/hooks/useScrollToView";
 
 interface IQuestionData {
     question: string;

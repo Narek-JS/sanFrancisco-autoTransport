@@ -2,8 +2,8 @@
     flex: 50;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
+    justify-content: center;
+    gap: 30px;}
 
 .explore {
     margin: 20px auto;

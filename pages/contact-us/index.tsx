@@ -1,11 +1,11 @@
 import { metaTags } from "@/constants/metaTags";
 import { NextPage } from "next";
 import { Fragment } from "react";
-import { Container } from "@/sharedComponents/Container";
-import { motionCustom } from "@/MotionAnimationElements";
+import { Container } from "@/components/Container";
+import { motionCustom } from "@/motion";
 import { ContentNodeIcon } from "@/public/assets/svgs/ContentNodeIcon";
 import { useScrollToView } from "@/hooks/useScrollToView";
-import { FormAgent } from "@/pagesComponents/FormAgent";
+import { FormAgent } from "@/shared/FormAgent";
 import Head from "next/head";
 import classes from './index.module.css';
 

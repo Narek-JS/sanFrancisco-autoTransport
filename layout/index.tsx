@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import { Provider as ReduxProvider } from 'react-redux'
+import { Provider as ReduxProvider } from 'react-redux';
 import { Header } from './Header';
 import { store } from '@/store';
 import { useRouter } from 'next/router';
@@ -9,7 +9,8 @@ import { Banner } from './Banner';
 import { SideBar } from './SideBar';
 import { SocialLinks } from './SocialLinks';
 import { Footer } from './Footer';
-import { Conditional } from '@/sharedComponents/Conditional';
+import { Conditional } from '@/components/Conditional';
+import { ScrollTopIcon } from '@/components/ScrollTopIcon';
 import Head from 'next/head';
 
 interface IProps {
@@ -29,7 +30,7 @@ const BannerStatus: React.FC<{ isBanner: boolean }> = ({ isBanner }) => {
 
 const Layout: React.FC<IProps> = ({ children, pageTitle = 'San Francisco' }) => {
     const { pathname, query } = useRouter();
-    const isBanner =  ['/blogs', '/news', '/404', '/customer-reviews'].includes(pathname) || query.slug;
+    const isBanner =  ['/blogs', '/news', '/404', '/reviews'].includes(pathname) || query.slug;
 
     return (
         <Fragment>
@@ -38,12 +39,13 @@ const Layout: React.FC<IProps> = ({ children, pageTitle = 'San Francisco' }) => 
             </Head>
             <ReduxProvider store={store}>
                 <BannerStatus isBanner={Boolean(isBanner)}/>
-                <Header />
+                <Header isBanner={Boolean(isBanner)}/>
                 <Conditional condition={!isBanner}>
                     <Banner />
                 </Conditional>
                 <SideBar />
                 <SocialLinks />
+                <ScrollTopIcon />
                 <main>
                     {children}
                 </main>

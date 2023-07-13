@@ -9,7 +9,7 @@ export const useScrollPositionWindow = (): number => {
     }
 
     window.addEventListener('scroll', handleScroll);
-
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

@@ -53,6 +53,24 @@ export const metaTags = {
             content="San Francisco Website Boat Moving"
         />
     ],
+    reviews: [
+        <title key={1}>Reviews | San Francisco</title>,
+        <meta key={2}
+            property="og:title"
+            data-hid="og:title"
+            data-n-head="ssr"
+            content="San Francisco Website Reviews"
+        />
+    ],
+    thankYou: [
+        <title key={1}>Thank You | San Francisco</title>,
+        <meta key={2}
+            property="og:title"
+            data-hid="og:title"
+            data-n-head="ssr"
+            content="San Francisco Website Thank You"
+        /> 
+    ],
     notFound: [
         <title key={1}>NotFound | San Francisco</title>,
         <meta key={2}

@@ -1,4 +1,4 @@
-import { Container } from '@/sharedComponents/Container';
+import { Container } from '@/components/Container';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
 import { useMemo } from 'react';
 import Image from 'next/image';
@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import testData from './test_data.json';
 import classes from './index.module.css';
 import useWindowSize from '@/hooks/useWindowSize';
+import { Logo } from '@/components/Logo';
 
 const Footer: React.FC = () => {
     
@@ -26,16 +27,7 @@ const Footer: React.FC = () => {
                 <div className={classes.content}>
                     <div className={classes.firstLine}>
                         <div className={classes.columnNode}>
-                            <Link href='/'>
-                                <Image
-                                    src={"/assets/images/logo.png"}
-                                    alt="logo"
-                                    className={classes.logo}
-                                    width={214}
-                                    height={88}
-                                    priority
-                                />
-                            </Link>
+                            <Logo />
                             <Link href='/contact-us' className={classNames(classes.link, classes.font20, classes.red)}>
                                 <RowForMore />
                                 Contact Us

@@ -1,0 +1,320 @@
+.reviewSection {
+    padding-top: 210px;
+}
+
+.content {
+    border-radius: 30px 30px 0 0;
+    background-color: #F5F5F5;
+    padding: 40px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.reviewsGraph {
+    border: 2px solid rgba(221, 192, 12, 0.20);
+    border-radius: 20px;
+    background: #FFFFFF;
+    padding: 25px 79px 50px 79px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.subTitle {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #00297A;
+    text-align: center;
+}
+
+.reviewContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.reviewContentSecondeBlock {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.descriptionWrapper {
+    max-width: 470px;
+    margin-right: 10px;
+}
+
+.titleOfDescription {
+    font-weight: 700;
+    font-size: 20px;
+    color: #BB2233; 
+    margin-bottom: 26px;
+}
+
+.description {
+    color: #FFFFFF;
+    font-weight: 400; 
+}
+
+.estimate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 35px;
+    max-height: 230px;
+}
+
+.estimateDiscuss {
+    font-weight: 700;
+    font-size: 64px;
+    color: #FFD60A;
+    white-space: nowrap;
+}
+
+.wrapperStars {
+    display: flex;
+    gap: 17px;
+}
+
+.reviewQuantity {
+    color: #00297A;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 230px;
+    gap: 20px;
+}
+
+.percentList {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.percentId {
+    font-size: 20px;
+    color: #00297A;
+    font-weight: 900;
+}
+
+.percentWrapper {
+    width: 300px;
+    height: 24px;
+    background-color: #00297A;
+    border-radius: 5px;
+}
+
+.row {
+    color: #00297A;
+}
+
+.percent {
+    font-weight: 400;
+    font-size: 20px;
+    color: #00297A;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 33px;
+    max-height: 230px;
+}
+
+.feedbackNode {
+    border: 2px solid rgba(221, 192, 12, 0.20);
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    background: #FFFFFF;
+}
+
+.wrapperfeedbackConetent {
+    margin-right: 15px;
+    margin-top: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+    max-height: 960px;
+}
+
+.wrapperfeedbackConetent::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.wrapperfeedbackConetent::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+}
+  
+.wrapperfeedbackConetent::-webkit-scrollbar-thumb {
+    background-color: #FFD60A;
+    border-radius: 10px;
+}
+
+.feedbackBtn {
+    max-width: 230px;
+    background: #FFD60A;
+    border-radius: 5px;
+    color: #FDFDFF;
+    font-size: 16px;
+    font-weight: 700; 
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+}
+
+.redMoreBtn {
+    color: #BB2233;
+    max-width: 140px;
+    border: 1px solid #BB2233;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 8px 28px;
+}
+
+.feedbackBtn:hover {
+    transform: translateY(-5px);
+}
+
+.feedbackBtn:active {
+    transform: translateY(-1px);
+}
+
+.percentActive {
+    background: #FFD60A;
+    border-radius: 5px;
+    height: 100%;
+    display: inline-block;
+}
+
+.feedback {
+    background: #FFFFFF;
+    border-bottom: 2px solid rgba(7, 133, 134, 0.2);
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    max-height: 1100px;
+    overflow-y: auto;
+
+    display: flex;
+    gap: 20px;
+
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    position: relative;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 83, 121, 0.1);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    background: #FFD60A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.contentdata {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.name {
+    color: #00297A;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.data {
+    color: #00297A;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #00297A;
+}
+
+.description {
+    color: rgba(0, 83, 121, .9);
+    margin-top: 10px;
+}
+
+.recommendation {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    display: flex;
+    gap: 10px;
+    color: #00297A;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 991px) {
+    .reviewContent {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reviewContentSecondeBlock {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recommendation {
+        right: initial;
+        top: initial;
+        left: 20px;
+        bottom: 10px;
+    }
+
+    .feedback {
+        padding-bottom: 40px;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .feedbackBtn {
+        max-width: initial;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .content { padding: 15px; }
+    .percentList { gap: 2px; }
+    .percentWrapper { width: 170px; }
+    .percent,
+    .percentId { font-size: 14px; }
+    .subTitle { margin-bottom: 15px; }
+    .estimate { gap: 15px; }
+}

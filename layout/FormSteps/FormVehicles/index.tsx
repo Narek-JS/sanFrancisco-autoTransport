@@ -2,9 +2,9 @@ import { AddVehiclesIcon } from '@/public/assets/svgs/AddVehiclesIcon';
 import { RemoveVehiclesIcon } from '@/public/assets/svgs/RemoveVehiclesIcon';
 import { validationSchemaFormVehicles } from '@/constants/validationSchema';
 import { GoBackFormIcon } from '@/public/assets/svgs/GoBackFormIcon';
-import { DropdownSelectUI } from '@/sharedComponents/DropdownSelectUI';
-import { FormikErrors } from '@/sharedComponents/FormikError';
-import { LabelUI } from '@/sharedComponents/LabelUI';
+import { DropdownSelectUI } from '@/components/DropdownSelectUI';
+import { FormikErrors } from '@/components/FormikError';
+import { LabelUI } from '@/components/LabelUI';
 import { useFormik } from 'formik';
 import {
     IVehicleFormData,

@@ -1,12 +1,12 @@
-import { Container } from '@/sharedComponents/Container';
+import { Container } from '@/components/Container';
 import { useEffect, useState } from 'react';
-import { LoadingUI } from '@/sharedComponents/LoadingUI';
+import { LoadingUI } from '@/components/LoadingUI';
 import { usePagination } from '@/hooks/usepagination';
-import { PostCard } from '@/sharedComponents/PostCard';
-import { Redirect } from '@/sharedComponents/Redirect';
+import { PostCard } from '@/components/PostCard';
+import { Redirect } from '@/components/Redirect';
 import { useGetBlogsQuery } from '@/store/blogs';
 import { useHydration } from '@/hooks/useHydration';
-import { motionCustom } from "@/MotionAnimationElements";
+import { motionCustom } from "@/motion";
 import { ContentNodeIcon } from '@/public/assets/svgs/ContentNodeIcon';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';

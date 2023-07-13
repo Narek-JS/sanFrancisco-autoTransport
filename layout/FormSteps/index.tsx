@@ -5,8 +5,9 @@ import { FormConfirmation } from './FormConfirmation';
 import { FormUserInfo } from './FormUserInfo';
 import { useRouter } from 'next/router';
 import { StepsBar } from './StepsBar';
-import { FormQuote } from '@/sharedComponents/FormQuote';
+import { FormQuote } from '@/components/FormQuote';
 import { BannerContent } from './BannerContent';
+import { Conditional } from '@/components/Conditional';
 import {
     IFormData,
     TypeFormData,
@@ -42,52 +43,53 @@ const FormSteps: React.FC = () => {
 
     return (
         <div className={classes.formSteps}>
-            <StepsBar
-                activeStep={step}
-                setInputBorderAnime={setInputBorderAnimeDebounce}
-            />
+            <Conditional condition={!isQuote}>
+                <StepsBar
+                    activeStep={step}
+                    setInputBorderAnime={setInputBorderAnimeDebounce}
+                />
+            </Conditional>
             <div className={classNames(classes.content, {
                 [classes.revers]: isQuote
             })}>
                 <BannerContent />
                 <div className={classes.form}>
-                    { isQuote ? (
-                        <FormQuote />
-                    ) : (
-                        <>
-                            { step === 1 && (
-                                <FormFromTo
-                                    animatedBorder={inputBorderAnime}
-                                    initialValues={wholeFormDataRef.current.from_to}
-                                    setStep={setStep}
-                                    updateGeneralFormData={updateGeneralFormData}
-                                />
-                            )}
-                            { step === 2 && (
-                                <FormVehicles
-                                    animatedBorder={inputBorderAnime}
-                                    initialValues={wholeFormDataRef.current.form_vehicles}
-                                    setStep={setStep}
-                                    updateGeneralFormData={updateGeneralFormData}
-                                />
-                            )}
-                            { step === 3 && (
-                                <FormConfirmation
-                                    animatedBorder={inputBorderAnime}
-                                    formData={wholeFormDataRef.current}
-                                    setStep={setStep}
-                                />
-                            )}
-                            { step === 4 && (
-                                <FormUserInfo
-                                    animatedBorder={inputBorderAnime}
-                                    initialValues={wholeFormDataRef.current.form_user_info}
-                                    setStep={setStep}
-                                    updateGeneralFormData={updateGeneralFormData}
-                                />
-                            )}
-                        </>
-                    )}
+                    <Conditional
+                        condition={!isQuote}
+                        fallback={() => <FormQuote />}
+                    ><>
+                        { step === 1 && (
+                            <FormFromTo
+                                animatedBorder={inputBorderAnime}
+                                initialValues={wholeFormDataRef.current.from_to}
+                                setStep={setStep}
+                                updateGeneralFormData={updateGeneralFormData}
+                            />
+                        )}
+                        { step === 2 && (
+                            <FormVehicles
+                                animatedBorder={inputBorderAnime}
+                                initialValues={wholeFormDataRef.current.form_vehicles}
+                                setStep={setStep}
+                                updateGeneralFormData={updateGeneralFormData}
+                            />
+                        )}
+                        { step === 3 && (
+                            <FormConfirmation
+                                animatedBorder={inputBorderAnime}
+                                formData={wholeFormDataRef.current}
+                                setStep={setStep}
+                            />
+                        )}
+                        { step === 4 && (
+                            <FormUserInfo
+                                animatedBorder={inputBorderAnime}
+                                initialValues={wholeFormDataRef.current.form_user_info}
+                                setStep={setStep}
+                                updateGeneralFormData={updateGeneralFormData}
+                            />
+                        )}
+                    </></Conditional>
                 </div>
             </div>
         </div>

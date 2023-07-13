@@ -1,23 +1,23 @@
-import { Container } from '@/sharedComponents/Container';
+import { Container } from '@/components/Container';
 import { useGetMenusQuery } from '@/store/manu';
-import { LoadingUI } from '@/sharedComponents/LoadingUI';
+import { LoadingUI } from '@/components/LoadingUI';
 import { Nav } from './Nav';
-import { Redirect } from '@/sharedComponents/Redirect';
-import { Search } from '@/sharedComponents/Search';
+import { Redirect } from '@/components/Redirect';
+import { Search } from '@/components/Search';
 import { useScrollPositionWindow } from '@/hooks/useScrollPositionWindow';
 import { useEffect, useState } from 'react';
-import { Burger } from '@/sharedComponents/Burger';
+import { Burger } from '@/components/Burger';
 import { useAppSelector } from '@/store/hooks';
 import { selectQuoteFormMobileStatus } from '@/store/quoteForm';
 import { FormSteps } from '../FormSteps';
 import { useRouter } from 'next/router';
-import Dropdown from '@/sharedComponents/Dropdown';
+import { Logo } from '@/components/Logo';
+import Dropdown from '@/components/Dropdown';
 import classes from './index.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-const Header: React.FC = () => {
+const Header: React.FC<{ isBanner: boolean }> = ({ isBanner }) => {
     const { pathname, query } = useRouter();
     const { isLoading, data, error } = useGetMenusQuery('menus');
     const [ isContentDesktopFixed, setIsContentDesktopFixed ] = useState(false);
@@ -32,14 +32,12 @@ const Header: React.FC = () => {
         };
     }, [scrollPosition]);
 
-    const isBanner = pathname === '/blogs' || pathname === '/news' || pathname === '/404' || pathname === '/customer-reviews' || query.slug; 
-
     if(error !== undefined) return <Redirect to='/404'/>
     if(isLoading) return <LoadingUI type='fullPage' />;
 
     return (
         <header className={classes.header}>
-            <Nav />
+            <Nav isBanner={isBanner}/>
             <div
                 className={classNames(classes.informationBar, {
                     [classes.informationBarBg]: isContentDesktopFixed || isBanner
@@ -47,19 +45,10 @@ const Header: React.FC = () => {
             >
                 <Container>
                     <div className={classes.contentDesktop}>
-                        <Link href='/'>
-                            <Image
-                                src={"/assets/images/logo.png"}
-                                alt="logo"
-                                className={classes.logo}
-                                width={190}
-                                height={100}
-                                priority
-                            />
-                        </Link>
+                        <Logo />
                         <ul className={classes.ul}>
                             { data?.items.map((item) => (
-                                item.children?.isEmpty() ? (
+                                item.children?.length ? (
                                     <Link
                                         className={classNames(classes.link, {
                                             [classes.activeLink]: pathname === '/' + item.url
@@ -85,16 +74,7 @@ const Header: React.FC = () => {
                         <Search />
                     </div>
                     <div className={classes.contentMobile}>
-                        <Link href='/'>
-                            <Image
-                                src={"/assets/images/logo.png"}
-                                alt="logo"
-                                className={classes.logo}
-                                width={190}
-                                height={100}
-                                priority
-                            />
-                        </Link>
+                        <Logo />
                         <Burger />       
                     </div>
                 </Container>

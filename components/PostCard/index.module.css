@@ -1,0 +1,113 @@
+.card {
+    position: relative;
+    width: 280px;
+    padding-bottom: 10px;
+    background: #F4F7FB;
+}
+
+.shadowCard {
+    box-shadow: 5px 5px 5px 0px rgba(7, 39, 101, 0.15);
+    border-radius: 25px
+}
+
+.squareCard {
+    border: 1px solid var(--red, #E53E29);
+}
+
+.image {
+    height: 185px;
+    object-fit: cover;
+}
+
+.shadowCard .image {
+    border-radius: 25px 25px 0 0;
+}
+
+.cardContent {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.date {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    justify-content: center;
+}
+
+.shadowCard .date {
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+
+.shadowCard .date svg {
+    position: absolute;
+}
+
+.date span {
+    color: rgba(7, 39, 101, 0.60);
+    font-weight: 700;
+}
+
+.shadowCard .date span {
+    margin-left: 30px;
+}
+
+.row {
+    width: 1.4px;
+    height: 21px;
+    background: rgba(7, 39, 101, 0.60);
+}
+
+.link {
+    font-weight: 700;
+    line-height: 20px;
+    color: #E53E29;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #072765;
+    text-align: center;
+    line-height: 24px;
+}
+
+.shadowCard .title {
+    text-align: start;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(7, 39, 101, 0.80);;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+    line-height: 1.4;
+}
+
+.wrapperLink {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.viewAll {
+    color: rgba(7, 39, 101, 0.60);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+}

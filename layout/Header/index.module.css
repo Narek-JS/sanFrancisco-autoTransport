@@ -24,12 +24,6 @@
     height: -webkit-fill-available;
 }
 
-.logo {
-    width: 214px;
-    height: 88px;
-    object-fit: contain;
-}
-
 .ul {
     display: flex;
     align-items: center;

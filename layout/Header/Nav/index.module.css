@@ -6,7 +6,6 @@
     position: fixed;
     z-index: 999;
     transition: all .5s;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -86,7 +85,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    
+    .nav {
+        transition: none;
+        border-bottom: initial;
+    }
+
     .getQuote {
         color: hsla(7, 78%, 53%, 1);
     }
@@ -94,7 +97,6 @@
     .contentMobile { 
         display: flex;
     }
-
 
     .contentDesktop {
         display: none;

@@ -5,7 +5,7 @@ interface WindowSize {
   height?: number;
 }
 
-const useWindowSize = (): WindowSize => {
+const useWindowSize = (debounceDilay?: number): WindowSize => {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: undefined,
     height: undefined,
@@ -27,13 +27,13 @@ const useWindowSize = (): WindowSize => {
       });
     };
 
-    const debouncedHandleResize = debounce(handleResize, 250);
+    const debouncedHandleResize = debounce(handleResize, debounceDilay || 0);
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', debouncedHandleResize);
     handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', debouncedHandleResize);
     };
   }, []);
 

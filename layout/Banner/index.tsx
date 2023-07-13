@@ -1,5 +1,5 @@
 import { BannerSlider } from './BannerSlider';
-import { Container } from '@/sharedComponents/Container';
+import { Container } from '@/components/Container';
 import { FormSteps } from '../FormSteps';
 import { useRenderRout } from '@/hooks/useRenderRout';
 import useWindowSize from '@/hooks/useWindowSize';

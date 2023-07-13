@@ -1,11 +1,5 @@
 import { ISearchData } from "@/store/search";
 
-type FindMessage = {
-    slug: string;
-    title: string; 
-};
-
-
 const getPagesData = (pages: Array<Record<string, any>>) => (
     pages.map(({ slug, title }) => ({slug, title}))
 );
@@ -39,7 +33,6 @@ export const getSearchAdaptedData = (data: any, searchText: string): ISearchData
     posts: getPosts(data?.data?.posts || [], searchText),
     empty: data?.data?.empty
 });
-
 
 export const scrollIsArriveBottom = (position: number, element: HTMLDivElement): boolean => (
     position > 0 && (position + element?.clientHeight! >= element?.scrollHeight! - 100)

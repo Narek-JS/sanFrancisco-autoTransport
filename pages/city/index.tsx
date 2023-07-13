@@ -1,20 +1,20 @@
 import { Fragment } from 'react';
 import { metaTags } from '@/constants/metaTags';
 import { cities_data } from '@/TEST_DATA/cities_data';
-import { Container } from '@/sharedComponents/Container';
+import { Container } from '@/components/Container';
 import { ContentNodeIcon } from '@/public/assets/svgs/ContentNodeIcon';
 import { useHydration } from '@/hooks/useHydration';
-import { Conditional } from '@/sharedComponents/Conditional';
-import { GoogleMapComponent } from '@/sharedComponents/GoogleMap';
+import { Conditional } from '@/components/Conditional';
+import { GoogleMapComponent } from '@/components/GoogleMap';
 import { UnderLineSvg } from '@/public/assets/svgs/UnderLineSvg';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
-import { Redirect } from '@/sharedComponents/Redirect';
+import { Redirect } from '@/components/Redirect';
+import { useScrollToView } from '@/hooks/useScrollToView';
 import useWindowSize from '@/hooks/useWindowSize';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
 import classes from './index.module.css';
-import { useScrollToView } from '@/hooks/useScrollToView';
 
 interface IProps {};
 
@@ -39,6 +39,21 @@ const City: React.FC<IProps> = () => {
         }
     ];
 
+    const getHeight = (): number => {
+
+        if(Number(width) > 1250) return 0;
+
+        const maxMargin = 250;  // Set the maximum height value;
+        const minMargin = 0;    // Set the minimum height value;
+
+        const minWidth  = 768;  // Set the minimum window width;
+        const maxWidth  = 1250; // Set the maximum window width;
+
+        const height = maxMargin - ((Number(width) - minWidth) / (maxWidth - minWidth)) * (maxMargin - minMargin);
+
+        return height;
+    };
+
     if(Number(width) <= 768) return <Redirect to='/404' />;
 
     return (
@@ -49,7 +64,10 @@ const City: React.FC<IProps> = () => {
                 ref={sectionRef}
             >
                 <Container>
-                    <div className={classes.content}>
+                    <div
+                        className={classes.content}
+                        style={{ marginBottom: getHeight() + 'px' }}
+                    >
                         <div className={classes.currentCityContent}>
                             <h1 className={classes.title}>
                                 <ContentNodeIcon color='hsla(7, 78%, 53%, 1)'/>

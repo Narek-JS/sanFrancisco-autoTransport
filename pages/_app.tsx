@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import { Ubuntu } from 'next/font/google';
-import { useRouter } from 'next/router';
 import Layout from '@/layout';
 import Head from 'next/head';
 import '@/styles/globals.css';
@@ -10,18 +9,6 @@ const ubuntuFont = Ubuntu({
   subsets: ['latin'],
   style: 'normal'
 });
-
-Array.prototype.isEmpty = function () {
-  return !Boolean(this.length);
-};
-
-Number.prototype.isOdd = function (number) {
-  return number % 2 !== 0;
-};
-
-Number.prototype.isEven = function (number) {
-  return number % 2 === 0;
-};
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

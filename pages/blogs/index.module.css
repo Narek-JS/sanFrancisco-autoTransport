@@ -81,3 +81,14 @@
       gap: 10px;
     }
 }
+
+
+@media screen and (max-width: 460px) {
+    .paginationBtns {
+        gap: 5px;
+    }  
+
+    .btn {
+        padding: 8px 10px;
+    }
+}

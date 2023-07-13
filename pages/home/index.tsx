@@ -1,24 +1,25 @@
 import { Fragment } from 'react';
 import { metaTags } from '@/constants/metaTags';
-import { ReviewSection } from '@/sharedComponents/sections/ReviewSection';
-import { Container } from '@/sharedComponents/Container';
-import { WrapperContentNode } from '@/sharedComponents/WrapperContentNode';
+import { ReviewSection } from '@/components/sections/ReviewSection';
+import { Container } from '@/components/Container';
+import { WrapperContentNode } from '@/components/WrapperContentNode';
 import { SectionTitleIcon } from '@/public/assets/svgs/SectionTitleIcon';
-import { Video } from '@/sharedComponents/Video';
-import { ImageRounded } from '@/sharedComponents/ImageRounded';
-import { SubscibeYoutube } from '@/sharedComponents/SubscibeYoutube';
-import { TransportServices } from '@/sharedComponents/sections/TransportServices';
+import { Video } from '@/components/Video';
+import { ImageRounded } from '@/components/ImageRounded';
+import { SubscibeYoutube } from '@/components/SubscibeYoutube';
+import { TransportServices } from '@/components/sections/TransportServices';
 import { mock } from './mock';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
-import { InsuranceFullCoverage } from '@/sharedComponents/sections/InsuranceFullCoverage';
-import { CalculatedImages } from '@/pagesComponents/CalculatedImages';
-import { CalculatedSteps } from '@/pagesComponents/CalculatedSteps';
-import { PostCard } from '@/sharedComponents/PostCard';
-import { HelpSection } from '@/sharedComponents/sections/HelpSection';
-import { motionCustom } from "@/MotionAnimationElements";
+import { InsuranceFullCoverage } from '@/components/sections/InsuranceFullCoverage';
+import { CalculatedImages } from '@/shared/CalculatedImages';
+import { CalculatedSteps } from '@/shared/CalculatedSteps';
+import { PostCard } from '@/components/PostCard';
+import { HelpSection } from '@/components/sections/HelpSection';
+import { motionCustom } from "@/motion";
 import { NextPage } from 'next';
 import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
-import { latest_articles as latestArticles } from '@/TEST_DATA/latest_articles';
+import { useGetLatestNewsQuery } from '@/store/latestNews';
+import { useGetLatestBlogsQuery } from '@/store/latestBlogs';
 import Head from 'next/head';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -26,6 +27,11 @@ import classes from './index.module.css';
 
 const Home: NextPage = () => {
   const mockData = mock(); 
+  const { data: dataLatestNews }  = useGetLatestNewsQuery(2);
+  const { data: dataLatestBlogs } = useGetLatestBlogsQuery(2);
+
+  console.log('dataLatestNews --> ', dataLatestNews);
+  console.log('dataLatestBlogs --> ', dataLatestBlogs);
 
   return (
     <Fragment>
@@ -73,7 +79,11 @@ const Home: NextPage = () => {
               ))}
             </WrapperContentNode>
             <div className={classes.transportServicesSeccondBlock}>
-              <Video id='Azfq5eueWLY' from='bottom' />
+              <Video
+                id='Azfq5eueWLY'
+                from='bottom'
+                width="410px"
+              />
               <SubscibeYoutube
                 link='https://www.youtube.com/watch?v=Azfq5eueWLY'
                 from='right'
@@ -108,7 +118,6 @@ const Home: NextPage = () => {
           </motionCustom.div>
         </Container>
       </section>
-
       <section className={classes.latestArticlesSection}>
         <Container> 
           <div className={classes.latestArticlesTitle}>
@@ -121,10 +130,14 @@ const Home: NextPage = () => {
               <motionCustom.h3 from='left'>Latest Blogs</motionCustom.h3>
 
               <div className={classes.cards}>
-                { latestArticles.blogs.map((blog, index) => (
+                { dataLatestBlogs?.data.map((blog, index) => (
                   <PostCard
                     key={index}
-                    {...blog}
+                    date={blog?.created_at || ''}
+                    title={blog?.slug || ''}
+                    description={blog?.body || ''}
+                    imagePath={blog?.image || ''}
+                    link={{ url: blog?.slug || '' }}
                     category='blogs'
                     type='square'
                     from='left'
@@ -137,10 +150,14 @@ const Home: NextPage = () => {
               <motionCustom.h3 from='right'>Latest News</motionCustom.h3>
 
               <div className={classes.cards}>
-                { latestArticles.news.map((new_, index) => (
+                { dataLatestNews?.data.map((new_, index) => (
                   <PostCard
                     key={index}
-                    {...new_}
+                    date={new_?.created_at || ''}
+                    title={new_?.slug || ''}
+                    description={new_?.body || ''}
+                    imagePath={new_?.image || ''}
+                    link={{ url: new_?.slug || '' }}
                     category='news'
                     type='square'
                     from='right'
@@ -151,11 +168,9 @@ const Home: NextPage = () => {
           </div>
         </Container>
       </section>
-
       <HelpSection />
     </Fragment>
   );
 };
-
 
 export default Home;

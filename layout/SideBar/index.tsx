@@ -1,5 +1,5 @@
-import { Container } from '@/sharedComponents/Container';
-import { Search } from '@/sharedComponents/Search';
+import { Container } from '@/components/Container';
+import { Search } from '@/components/Search';
 import { selectMenus } from '@/store/manu';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { closeSidebar, selectSiteBarStatus } from '@/store/siteBar';
@@ -30,7 +30,7 @@ const SideBar: React.FC = () => {
                 <div className={classes.siodeBarContent}>
                     <Search />
                     <div className={classes.linksGroup}>
-                        { data?.allItems.map((item, index) => item?.children?.isEmpty() ? ( 
+                        { data?.allItems.map((item, index) => item?.children?.length ? ( 
                             <Link
                                 href={item?.url || ''}
                                 key={item.id}

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./types", "./custom-types.d.ts", "arrayExtensions.ts"],
+    "typeRoots": ["./node_modules/@types", "./types", "arrayExtensions.ts"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

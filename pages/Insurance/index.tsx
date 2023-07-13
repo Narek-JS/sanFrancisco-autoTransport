@@ -2,17 +2,17 @@ import { metaTags } from "@/constants/metaTags";
 import { NextPage } from "next";
 import { Fragment, ReactNode } from "react";
 import { SectionTitleIcon } from "@/public/assets/svgs/SectionTitleIcon";
-import { InsuranceFullCoverage } from "@/sharedComponents/sections/InsuranceFullCoverage";
+import { InsuranceFullCoverage } from "@/components/sections/InsuranceFullCoverage";
 import { useScrollToView } from "@/hooks/useScrollToView";
 import { CarIcon } from "@/public/assets/svgs/CarIcon";
-import { Container } from "@/sharedComponents/Container";
+import { Container } from "@/components/Container";
 import { CarInshuranceIcon } from "@/public/assets/svgs/CarInshuranceIcon";
 import { EarringIcon } from "@/public/assets/svgs/EarringIcon";
 import { FaqIcon } from "@/public/assets/svgs/FaqIcon";
-import { WrapperContentNode } from "@/sharedComponents/WrapperContentNode";
-import { ImageRounded } from "@/sharedComponents/ImageRounded";
-import { TransportServices } from "@/sharedComponents/sections/TransportServices";
-import { motionCustom } from "@/MotionAnimationElements";
+import { WrapperContentNode } from "@/components/WrapperContentNode";
+import { ImageRounded } from "@/components/ImageRounded";
+import { TransportServices } from "@/components/sections/TransportServices";
+import { motionCustom } from "@/motion";
 import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
 import classNames from "classnames";
 import Image from "next/image";
@@ -47,10 +47,12 @@ const Insurance: NextPage = () => {
             <InsuranceFullCoverage />
             <section>
                 <Container>
-                    <h2 className={classes.ratesTitle}>
+                    <div className={classes.ratesTitle}>
                         <CarIcon />
-                        San Francisco Car Transport’s <span> rates are as </span> follows
-                    </h2>
+                        <h2>
+                            San Francisco Car Transport’s <span> rates are as </span> follows
+                        </h2>
+                    </div>
                     <div className={classes.ratesContent}>
                         <div className={classes.ratesContentFirsNode}>
                             <WhiteBlockNode from="left">

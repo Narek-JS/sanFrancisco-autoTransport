@@ -1,8 +1,9 @@
-import { LoadingUI } from "@/sharedComponents/LoadingUI";
+import { LoadingUI } from "@/components/LoadingUI";
 import { useGetDynamicDataQuery } from "@/store/dynamicData";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import { Post } from "@/pagesComponents/Post";
+import { Post } from "@/shared/Post";
+import { Redirect } from "@/components/Redirect";
 import NotFound from "./404";
 
 const Page: NextPage = () => {
@@ -13,6 +14,8 @@ const Page: NextPage = () => {
     });
 
     if(isLoading) return <LoadingUI type="fullPage" />;
+
+    if(error) return <Redirect to="/404"/>
 
     if(data?.data?.post?.category.name === 'Blogs') return <Post category="blogs" data={data.data}/>;
 

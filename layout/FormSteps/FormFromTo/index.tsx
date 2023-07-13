@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
-import { LabelUI } from '@/sharedComponents/LabelUI';
+import { LabelUI } from '@/components/LabelUI';
 import { IFromToFormData, SetStepFunction, UpdateGeneralFormData } from '@/model/form';
 import { validationSchemaFormFromTo } from '@/constants/validationSchema';
-import { FormikErrors } from '@/sharedComponents/FormikError';
+import { FormikErrors } from '@/components/FormikError';
 
 import classes from './index.module.css';
 import classNames from 'classnames';

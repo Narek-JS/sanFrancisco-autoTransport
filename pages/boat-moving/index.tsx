@@ -1,14 +1,14 @@
 import { NextPage } from "next";
 import { Fragment } from "react";
 import { metaTags } from "@/constants/metaTags";
-import { Container } from "@/sharedComponents/Container";
+import { Container } from "@/components/Container";
 import { useScrollToView } from "@/hooks/useScrollToView";
 import { TrainBoatIcon } from "@/public/assets/svgs/TrainBoatIcon";
-import { HelpSection } from "@/sharedComponents/sections/HelpSection";
+import { HelpSection } from "@/components/sections/HelpSection";
 import { SectionTitleIcon } from "@/public/assets/svgs/SectionTitleIcon";
-import { WrapperContentNode } from "@/sharedComponents/WrapperContentNode";
+import { WrapperContentNode } from "@/components/WrapperContentNode";
 import { StarBoatMovingIcon } from "@/public/assets/svgs/StarBoatMovingIcon";
-import { motionCustom } from '@/MotionAnimationElements';
+import { motionCustom } from '@/motion';
 import Head from "next/head";
 import Image from "next/image";
 import classes from './index.module.css';

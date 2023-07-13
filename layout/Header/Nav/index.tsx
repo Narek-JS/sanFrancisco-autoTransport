@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container } from '@/sharedComponents/Container';
+import { Container } from '@/components/Container';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { selectMenus } from '@/store/manu';
 import { EarringIcon } from '@/public/assets/svgs/EarringIcon';
@@ -9,14 +9,14 @@ import { closeSidebar, selectSiteBarStatus } from '@/store/siteBar';
 import { useScrollPositionWindow } from '@/hooks/useScrollPositionWindow';
 import { useRouter } from 'next/router';
 import { ArrowIcon } from '@/public/assets/svgs/ArrowIcon';
+import { EarringIconMobile } from '@/public/assets/svgs/EarringIconMobile';
 import useWindowSize from '@/hooks/useWindowSize';
 import Link from 'next/link';
 import classNames from 'classnames';
 import classes from './index.module.css';
-import { EarringIconMobile } from '@/public/assets/svgs/EarringIconMobile';
 
-const Nav: React.FC = () => {
-    const { pathname, query } = useRouter();
+const Nav: React.FC<{ isBanner: boolean }> = ({ isBanner }) => {
+    const { pathname } = useRouter();
     const { width } = useWindowSize();
     const { data } = useAppSelector(selectMenus);
     const [ isContentDesktopFixed, setIsContentDesktopFixed ] = useState(false);
@@ -24,13 +24,6 @@ const Nav: React.FC = () => {
     const scrollPosition = useScrollPositionWindow();
     const isOpenSideBar = useAppSelector(selectSiteBarStatus);
     const dispatch = useAppDispatch();
-    const isBanner = (
-        pathname === '/blogs' ||
-        pathname === '/news' ||
-        pathname === '/404' ||
-        pathname === '/customer-reviews' ||
-        query.slug
-    ); 
 
     useEffect(() => {
         if (scrollPosition >= 50 && !isContentDesktopFixed) {

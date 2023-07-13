@@ -1,0 +1,274 @@
+.mt160 {
+    margin-top: 160px;
+}
+
+.title {
+    color: #072765;
+    font-weight: 600;
+    font-size: 20px; 
+    position: relative;
+    display: inline-block;
+    padding-right: 110px;
+    margin-top: 15px;
+}
+
+.title a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* general styles */
+.defaultText {
+    color: rgba(0, 59, 86, 0.6);
+    font-weight: 500; 
+}
+
+/* post Section, first Section */
+.postSection {
+    margin-top: 10px;
+    display: flex;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(0, 59, 86, 0.25);
+    margin-bottom: 30px;
+}
+
+.postContent {
+    max-width: 780px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+    /* image block */
+.wrapperImage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 2px solid rgba(0, 59, 86, 0.25);
+    padding-bottom: 20px;
+}
+
+.postImage {
+    max-height: 405px;
+    object-fit: cover;
+}
+
+.wrapperSocial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendarSlice {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.verticalRow {
+    border: 1px solid rgba(0, 59, 86, 0.6);
+    transform: rotate(90deg);
+    width: 30px;
+    margin: 0 -20px;
+}
+
+.calendarSlicePostText {
+    color: #00B74A;
+    font-weight: 500; 
+}
+
+.comment,
+.likeCount,
+.like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like span,
+.likeCount span,
+.comment span {
+    color: rgba(0, 41, 122, 0.6);
+    font-weight: 500;
+}
+
+.like {
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.like:hover {
+    transform: scale(1.1);
+}
+
+.aktiveLike span {
+    background: linear-gradient(180deg, #F83600 0%, #FE8C00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.messageBlock,
+.likeBlock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.messageBlock span,
+.likeBlock span {
+    color: rgba(0, 59, 86, 0.6);
+    font-weight: 500; 
+}
+
+.messageBlock svg,
+.likeBlock svg,
+.socialSlice svg {
+    width: 18px;
+    height: 18px;
+}
+
+.socialSlice {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.shareText {
+    color: rgba(0, 59, 86, 0.8);
+    font-weight: 700;
+    font-size: 20px; 
+}
+
+.likeGroup {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.activeLike .defaultText {
+    color: #E53E29;
+}
+
+    /* blog textes */
+.postBody {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.postBody h2 {
+    color: #072765;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 25px 0;
+}
+
+.postBody p { 
+    color: #072765;
+}
+
+.postBody p a {
+    color: #E53E29;
+}
+
+/* Latest News */
+.wrapperMightAlso {
+    display: flex;
+    gap: 20px;
+}
+
+.contentContents {
+    display: flex;
+    gap: 20px;
+}
+
+.contentBlocks {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contentBlocks div p {
+    max-height: 100px;
+}
+
+.contentBlocksTitle {
+    margin-bottom: 30px;
+    color: #E53E29;
+    font-weight: 700;
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* relatedPosts */
+
+.relatedPosts {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapperMightAlso {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .socialSlice {
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .postSection {
+        gap: 20px;
+    }
+
+    .newsCardContent {
+        gap: 10px;
+        padding: 0px 10px 10px 10px;
+    }
+
+    .postImage {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .contentBlocks .post-card {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .postSection {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .contentBlocks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contentBlocksTitle {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .wrapperSocial {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

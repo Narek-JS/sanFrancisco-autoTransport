@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { FormQuote } from '@/sharedComponents/FormQuote';
+import { FormQuote } from '@/components/FormQuote';
 import { ArrowIcon } from '@/public/assets/svgs/ArrowIcon';
 import { BingIcon } from "@/public/assets/svgs/BingIcon";
 import { FbIcon } from "@/public/assets/svgs/FbIcon";
@@ -10,8 +10,9 @@ import { YelpIcon } from "@/public/assets/svgs/YelpIcon";
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { closeQuoteFormDesktop, openQuoteFormDesktop, selectQuoteFormStatusDesktop } from '@/store/quoteForm';
 import { selectMenus } from '@/store/manu';
+import { useRouter } from 'next/router';
 import useWindowSize from '@/hooks/useWindowSize';
-import Portal from '@/sharedComponents/Portal';
+import Portal from '@/components/Portal';
 import classNames from 'classnames';
 import classes from './index.module.css';
 
@@ -27,10 +28,15 @@ export const socialIcons = {
 const SocialLinks = () => {
     const { width } = useWindowSize();
     const { data, } = useAppSelector(selectMenus);
+    const { pathname } = useRouter();
     const dispatch = useAppDispatch();
     const isOpenQuoteFormDesktop = useAppSelector(selectQuoteFormStatusDesktop)
+    
     const openFormPopup = () => dispatch(openQuoteFormDesktop());
     const closeFormPopup = () => dispatch(closeQuoteFormDesktop());
+    const scrollToTop = () => window.scroll({ top: 0, behavior: 'smooth' });
+
+    const isQuote = pathname === '/quote';
 
     if(Number(width) <= 768) return null;
 
@@ -41,7 +47,7 @@ const SocialLinks = () => {
                     const IconComponent = socialIcons[social.title];
                     return IconComponent && <IconComponent key={index} />
                 })}
-                <div className={classes.icon} onClick={openFormPopup}>
+                <div className={classes.icon} onClick={isQuote ? scrollToTop : openFormPopup}>
                     <p> <span>Get Quote</span> </p>
                     <i>
                         <ArrowIcon rotate={isOpenQuoteFormDesktop ? 180 : 0} />
@@ -50,7 +56,7 @@ const SocialLinks = () => {
             </div>
             {isOpenQuoteFormDesktop && (
                 <Portal onClose={closeFormPopup}>
-                    <FormQuote />
+                    <FormQuote isBorder={isOpenQuoteFormDesktop}/>
                 </Portal>
             )}
         </Fragment>

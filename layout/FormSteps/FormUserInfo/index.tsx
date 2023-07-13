@@ -1,9 +1,9 @@
 import { useFormik } from 'formik';
-import { LabelUI } from '@/sharedComponents/LabelUI';
+import { LabelUI } from '@/components/LabelUI';
 import { GoBackFormIcon } from '@/public/assets/svgs/GoBackFormIcon';
 import { IUserInfoFormData, SetStepFunction, UpdateGeneralFormData } from '@/model/form';
 import { validationSchemaFormUserInfo } from '@/constants/validationSchema';
-import { FormikErrors } from '@/sharedComponents/FormikError';
+import { FormikErrors } from '@/components/FormikError';
 import useWindowSize from '@/hooks/useWindowSize';
 import classes from './index.module.css';
 import classNames from 'classnames';
