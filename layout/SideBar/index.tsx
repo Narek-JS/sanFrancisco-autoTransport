@@ -30,7 +30,7 @@ const SideBar: React.FC = () => {
                 <div className={classes.siodeBarContent}>
                     <Search />
                     <div className={classes.linksGroup}>
-                        { data?.allItems.map((item, index) => item?.children?.length ? ( 
+                        { data?.allItems.map((item, index) => !item?.children?.length ? ( 
                             <Link
                                 href={item?.url || ''}
                                 key={item.id}

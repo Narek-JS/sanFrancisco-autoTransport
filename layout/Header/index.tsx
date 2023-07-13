@@ -48,7 +48,7 @@ const Header: React.FC<{ isBanner: boolean }> = ({ isBanner }) => {
                         <Logo />
                         <ul className={classes.ul}>
                             { data?.items.map((item) => (
-                                item.children?.length ? (
+                                !item.children?.length ? (
                                     <Link
                                         className={classNames(classes.link, {
                                             [classes.activeLink]: pathname === '/' + item.url
