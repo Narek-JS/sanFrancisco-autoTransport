@@ -8,7 +8,6 @@ import { Video } from '@/components/Video';
 import { ImageRounded } from '@/components/ImageRounded';
 import { SubscibeYoutube } from '@/components/SubscibeYoutube';
 import { TransportServices } from '@/components/sections/TransportServices';
-import { mock } from './mock';
 import { RowForMore } from '@/public/assets/svgs/RowForMore';
 import { InsuranceFullCoverage } from '@/components/sections/InsuranceFullCoverage';
 import { CalculatedImages } from '@/shared/CalculatedImages';
@@ -20,6 +19,7 @@ import { NextPage } from 'next';
 import { transport_services_data as servicesData } from '@/TEST_DATA/transport_services_data';
 import { useGetLatestNewsQuery } from '@/store/latestNews';
 import { useGetLatestBlogsQuery } from '@/store/latestBlogs';
+import { mock } from '@/constants/homeMock';
 import Head from 'next/head';
 import classNames from 'classnames';
 import Link from 'next/link';
@@ -29,9 +29,6 @@ const Home: NextPage = () => {
   const mockData = mock(); 
   const { data: dataLatestNews }  = useGetLatestNewsQuery(2);
   const { data: dataLatestBlogs } = useGetLatestBlogsQuery(2);
-
-  console.log('dataLatestNews --> ', dataLatestNews);
-  console.log('dataLatestBlogs --> ', dataLatestBlogs);
 
   return (
     <Fragment>
