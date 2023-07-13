@@ -35,7 +35,7 @@ export const Video: React.FC<IProps> = ({
                     height,
                     width: '100%',
                     playerVars: {
-                        autoplay: 1,
+                        autoplay: 0,
                     },
                 }}
                 className='player'
