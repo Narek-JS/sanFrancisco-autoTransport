@@ -41,10 +41,7 @@ const Comment = () => {
     };
 
     return ( 
-        <motionCustom.div
-            className={classes.postComment}
-            from='right'
-        >
+        <div className={classes.postComment}>
             <h2 className={classes.postCommentTitle}>Leave a Reply</h2>
             <form className={classes.form} onSubmit={formik.handleSubmit}>
                 <div className={classes.inputs}>
@@ -111,7 +108,7 @@ const Comment = () => {
                     Post Comment
                 </button>
             </form>
-        </motionCustom.div>
+        </div>
     );
 };
 

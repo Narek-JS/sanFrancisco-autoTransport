@@ -141,7 +141,7 @@
         flex-direction: column;
     }
 
-    .latestArticlesContent {
+    .latestArticlesSection {
         display: none;
     }
 }
