@@ -11,6 +11,7 @@
     padding: 25px;
     margin: 30px auto 0 auto;
     border: 3px solid hsla(7, 78%, 53%, 1);
+    border-radius: 10px;
     position: relative;
 }
 

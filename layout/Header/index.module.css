@@ -64,7 +64,7 @@
     z-index: 999;
     margin-top: 60px;
     padding-top: 40px;
-
+    padding-bottom: 60px;
     overflow-y: auto;
 }
 
@@ -77,7 +77,6 @@
 }
   
 .fullScreen::-webkit-scrollbar-thumb {
-    background: hsla(7, 78%, 53%, 1);
     border-radius: 10px;
 }
 
