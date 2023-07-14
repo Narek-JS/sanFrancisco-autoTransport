@@ -249,7 +249,7 @@
     }
 
     .vehicleList {
-        gap: 10px;
+        gap: 25px;
     }
 
     .isQuote .fromTitle {
@@ -270,13 +270,21 @@
         justify-content: start;
         align-items: start;
     }
+
+    .error {
+        font-size: 12px;
+    }
+
+    .fromTo, .userInfo {
+        gap: 20px;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .seccondLineNode {
         flex-direction: column;
         align-items: start;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
 
     .vehicles {
@@ -287,13 +295,12 @@
         flex-direction: column;
         align-items: start;
         justify-content: start;
-        margin-bottom: 5px;
+        margin-bottom: 25px;
     }
 
     .inputWrapper {
         width: 100%;
     }
-
 
     .addIcon span,
     .removeIcon span {

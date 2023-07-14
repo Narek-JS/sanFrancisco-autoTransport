@@ -1,15 +1,12 @@
 .container {
-    height: calc(100vh - 350px);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 160px;
 }
 
-.container * { 
-}
-  
 .title {
     font-size: 48px;
     font-weight: bold;
@@ -32,9 +29,6 @@
 }
 
 @media screen and (max-width: 620px) {
-    .container {
-        height: calc(100vh - 400px);
-    }
     .title {
         font-size: 35px;
     }

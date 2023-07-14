@@ -224,4 +224,10 @@
         right: 15px;
         top: 13px;
     }
+
+    .vihacleList,
+    .locations {
+        gap: 5px;
+    }
+
 }
