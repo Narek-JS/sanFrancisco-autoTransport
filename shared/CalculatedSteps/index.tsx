@@ -29,11 +29,11 @@ const CalculatedSteps: React.FC = () => {
 
         if(Number(width) > 768) return 380;
 
-        const maxHeight = 730 ; // Set the maximum height value;
-        const minHeight = 380 ; // Set the minimum height value;
+        const maxHeight = 730; // Set the maximum height value;
+        const minHeight = 380; // Set the minimum height value;
 
-        const minWidth  = 320 ; // Set the minimum window width;
-        const maxWidth  = 800 ; // Set the maximum window width;
+        const minWidth  = 320; // Set the minimum window width;
+        const maxWidth  = 800; // Set the maximum window width;
 
         const height = maxHeight - ((Number(width) - minWidth) / (maxWidth - minWidth)) * (maxHeight - minHeight);
 

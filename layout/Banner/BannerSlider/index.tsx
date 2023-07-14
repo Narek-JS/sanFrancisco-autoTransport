@@ -6,20 +6,25 @@ import { useHydration } from '@/hooks/useHydration';
 import Image from 'next/image';
 import classes from './index.module.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useEffect, useState } from 'react';
 
 const BannerSlider: React.FC = () => {
   const dispatch = useAppDispatch();
   const hydration = useHydration();
-  
+  const [ state, setState ] = useState<number>(0);
   const handleSlideChange = (index: number) => {
     if(inRange(index, 0, 4)) {
       dispatch(changeBannerIndex(String(index) as BannreIndexType));
     };
   };
-  
   const bannerContentElm: HTMLElement | null = hydration ? document.querySelector('.bannerContentElm') : null; 
 
   const style = { height: bannerContentElm?.offsetHeight === undefined ? '100vh' : (bannerContentElm?.offsetHeight + 185) + 'px' };
+
+  useEffect(() => {
+    setState(1);
+    console.log('state --> ', state)
+  }, []);
 
   return (
     <Carousel

@@ -298,6 +298,7 @@
 
     .feedback {
         padding-bottom: 40px;
+        padding-right: 0;
     }
 
     .buttons {
@@ -306,15 +307,62 @@
 
     .feedbackBtn {
         max-width: initial;
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .reviewsGraph {
+        padding: 25px 30px;
+    }
+
+    .subTitle {
+        font-size: 18px;
+    }
+
+    .estimate {
+        align-items: center;
+    }
+
+    .estimateDiscuss {
+        font-size: 42px;
+    }
+
+    .reviewQuantity {
+        font-size: 25px;
+    }
+
+    .reviewContentSecondeBlock {
+        gap: 25px;
+    }
+
+    .content {
+        gap: 25px;
+    } 
+
+    .reviewSection {
+        padding-top: 190px;
     }
 }
 
 @media screen and (max-width: 560px) {
-    .content { padding: 15px; }
-    .percentList { gap: 2px; }
-    .percentWrapper { width: 170px; }
+    .content {
+        padding: 15px;
+        padding-bottom: 0;
+    }
+    .percentList {
+        gap: 2px;
+    }
+    .percentWrapper {
+        width: 170px;
+    }
     .percent,
-    .percentId { font-size: 14px; }
-    .subTitle { margin-bottom: 15px; }
-    .estimate { gap: 15px; }
+    .percentId {
+        font-size: 14px;
+    }
+    .subTitle {
+        margin-bottom: 15px;
+    }
+    .estimate {
+        gap: 15px;
+    }
 }

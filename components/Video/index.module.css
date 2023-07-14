@@ -20,3 +20,9 @@
         max-height: 100%;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .rounded-video {
+        width: 100% !important;
+    }
+}

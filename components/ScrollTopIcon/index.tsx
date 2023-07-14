@@ -1,7 +1,8 @@
 import { useScrollPositionWindow } from '@/hooks/useScrollPositionWindow';
 import { useEffect, useState } from 'react';
-import classes from './index.module.css';
+import { RowForMore } from '@/public/assets/svgs/RowForMore';
 import classNames from 'classnames';
+import classes from './index.module.css';
 
 const ScrollTopIcon: React.FC = () => {
     const [ to, setTo ] = useState<'top' | 'bottom'>('top');
@@ -25,7 +26,9 @@ const ScrollTopIcon: React.FC = () => {
             [classes.toTop]: to === 'top',
             [classes.toBottom]: to === 'bottom',
         })} onClick={scrollIntoTop}>
-            <span>🡩</span>
+            <span>
+                <RowForMore rotate={-90} color='#FFFFFF'/>
+            </span>
         </div>
     );
 };

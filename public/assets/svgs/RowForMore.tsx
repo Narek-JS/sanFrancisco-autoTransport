@@ -1,11 +1,14 @@
 export const RowForMore: React.FC<React.SVGProps<SVGSVGElement>> & {
-    color?: string
+    color?: string;
+    rotate?: number;
 } = ({
     color='#E53E29',
+    rotate=0,
     ...props
 }) => (
     <svg
         {...{props}}
+        style={{ transform: `rotate(${rotate}deg)` }}
         width="21"
         height="16"
         viewBox="0 0 21 16"

@@ -171,7 +171,57 @@
 
 
 @media screen and (max-width: 768px) {
-    .imageNode { display: none; }
-    .form { border-radius: 20px; }
-    .content { max-width: 570px; margin: 0 auto; }
+    .imageNode { 
+        display: none; 
+    }
+
+    .form { 
+        border-radius: 20px; 
+        padding: 10px 15px 15px 15px; 
+    }
+
+    .content { 
+        max-width: 570px; 
+        margin: 0 auto; 
+    }
+
+    .fomrTitle { 
+        font-size: 24px; 
+        margin-bottom: 15px; 
+    }
+
+    .input {
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+
+    .input::placeholder {
+        font-size: 13px;
+    }
+
+    .textarea::placeholder {
+        font-size: 14px;
+    }
+
+    .textarea {
+        height: 65px;
+        margin-bottom: 15px;
+    }
+
+    .rating,
+    .recapcha,
+    .recommend {
+        margin-bottom: 15px;
+    }
+
+    .recommend p {
+        font-size: 12px;
+    }
+
+    .closeForm {
+        width: 25px;
+        height: 25px;
+        right: 15px;
+        top: 13px;
+    }
 }

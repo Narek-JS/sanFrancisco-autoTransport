@@ -44,9 +44,7 @@ const StepsBar: React.FC<IProps> = ({ activeStep, setInputBorderAnime }) => {
     };
 
     return (
-        <div className={classNames(classes.stepsBar, {
-            [classes.quoteForm]: isOpen
-        })}>
+        <div className={classes.stepsBar}>
             { contentsStepsBar.map(({ id, text }, index) => (
                 <div
                     key={id}
